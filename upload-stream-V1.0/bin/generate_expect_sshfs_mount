@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "#!/usr/bin/expect"                        > ~/bin/hello
+echo "log_user 1"                               >> ~/bin/hello
+echo "set user [lindex \$argv 0]"                >> ~/bin/hello
+echo "set host [lindex \$argv 1]"                       >> ~/bin/hello
+echo "set remote_dir [lindex \$argv 2]"                  >> ~/bin/hello
+echo "set mount_directory_path [lindex \$argv 3]"        >> ~/bin/hello
+echo "set option [lindex \$argv 4]"                      >> ~/bin/hello
+echo "set option_parameter [lindex \$argv 5]"            >> ~/bin/hello
+echo "spawn -ignore HUP sshfs \$user@\$host:\$remote_dir   \$mount_directory_path -\$option \$option_parameter"          >> ~/bin/hello
+echo "#spawn -ignore HUP sshfs root@atgasia01:/var/www/html /home/mero/remote-root-atgasia01-1082 -p 1082"         >> ~/bin/hello
+echo "sleep 2"                                         >> ~/bin/hello
+echo "expect \"*password:\""                             >> ~/bin/hello
+echo "send \"mediapool\\r\""                            >> ~/bin/hello
+echo "interact"                                               >> ~/bin/hello  

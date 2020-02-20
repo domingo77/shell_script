@@ -1,0 +1,14 @@
+#!/usr/bin/expect
+log_user 1
+set user [lindex $argv 0]
+set host [lindex $argv 1]
+set remote_dir [lindex $argv 2]
+set mount_directory_path [lindex $argv 3]
+set option [lindex $argv 4]
+set option_parameter [lindex $argv 5]
+spawn -ignore HUP sshfs $user@$host:$remote_dir   $mount_directory_path -$option $option_parameter 
+#spawn -ignore HUP sshfs root@atgasia01:/var/www/html /home/mero/remote-root-atgasia01-1082 -p 1082
+sleep 2
+expect "*password:"
+send "mediapool\r"
+interact

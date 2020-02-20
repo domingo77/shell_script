@@ -1,0 +1,78 @@
+
+[Login Ubuntu]
+1, update 
+$ sudo apt-get update
+2, install ssh vim ifconfig expect
+$ sudo apt-get install openssh-server
+$ sudo apt-get install vim
+$ sudo apt-get install net-tools
+$ sudo apt-get install expect
+$ sudo apt-get install mediainfo
+$ sudo  apt-get install adb
+$ sudo apt-get install sshfs
+6, install samba and add samba user.
+$ sudo apt-get install samba samba-common
+$ sudo smbpasswd -a $linux_user
+
+# install Chinese input method
+ibus-setup  
+# failed to install because of apt lock, check apt 
+ps -A | grep apt
+# see samba users
+sudo pdbedit -L
+# mount remote server to local host
+sshfs root@atgasia01:/var/www/html /home/mero/remote-root-atgasia01-1082 -p 1082
+# unmount remote server from local
+fusermount -u $HOME/remote-root-atgasia01-1082
+
+Prerequisite:
+1, create directory to save some files: 
+  $ mkdir -p $HOME/1-never-delete
+2,provide xml template, located in directory $HOME/1-never-delete : Backup.xml
+3,provide check space txt, located in directory $HOME/1-never-delete : remote_space.txt
+  type the origin space into $HOME/1-never-delete/remote_space.txt
+  $ echo "$remote_space" > $HOME/1-never-delete/remote_space.txt
+
+4, create directory $HOME/bin, put attached automation script "parse_stream-update.sh"  into this directory, and give it r/w/x permission.
+  $ mkdir -p $HOME/bin
+  $ chmod 0777 $HOME/bin/parse_stream-update.sh
+  
+  
+  
+  
+  
+[parse_stream-update.sh] 
+1, generat_expect_file_about_sshfs_mount
+2, check_remote_server_is_mounted_to_local_directory
+3, check_record_xml_with_file_size_exist
+4, check_remote_space_is_enough
+   if remote server avail space is less than 5G. exit -1.
+5, create the directory which saved the corresponding log.
+6, check_file_name_is_valid
+   if unknown invalid file name, exit -1.
+7, loop for all stream 
+   .1 global_variable_configure_default
+   .2 check_track_type
+      if not match three track type, continue.
+   .3 calculate_track_type_line_arrange
+   .4 according to track type, parse the corresponding track type parameters.
+   .5 generate_final_name_as_per_name_rule
+   .6 check_same_file_in_xml
+      if there is the same file in xml, continue.
+	  how to judge two files  are the same?
+	  1, old name, new name, size are all the same.
+	  2, new  name, size are all the same.
+   .7 create_local_video_format_directory_and_move or create_local_video_format_directory_and_move
+      if not the same,but the new name is name, add the suffix: SRDCQA-number
+   .8 according to track type, create row template and insert into xml, 
+      finally, insert corresponding parameter into corresponding atrribute.
+    one loop end.	  
+ 
+ 
+ 
+ 
+Finally, User only download a script and just execute.
+1, create directory
+2, scp 
+3. execute
+ 
