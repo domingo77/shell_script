@@ -2,7 +2,6 @@
 
 #$1 is username
 #$2 is password
-#$3 website: http://mkmartifactory.amd.com/artifactory/atg-mero-generic-local/SRDC/AOSP/dev_p/ 
 #$4 /home/$USERNAME
 
 function time_elapsed(){

@@ -2826,7 +2826,6 @@ function check_fastmode(){
 
 #$1 is username
 #$2 is password
-#$3 website: http://mkmartifactory.amd.com/artifactory/atg-mero-generic-local/SRDC/AOSP/dev_p/
 #$4 local images path
 #$5 ip address
 #$6 ping -w deadline
