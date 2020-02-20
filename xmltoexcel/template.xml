@@ -1,0 +1,3151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite id="" name="" >
+<node_order><![CDATA[]]></node_order>
+<details><![CDATA[]]></details> 
+<testsuite id="7848" name="boot" >
+<node_order><![CDATA[1]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8541" name="OS can boot with power button">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[159]]></externalid>
+	<fullexternalid><![CDATA[test123-159]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is booting to android screen or not after pressing power button(cold boot)]]></summary>
+	<preconditions><![CDATA[1. OS should boot properly on the device with out any issues.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Switch on the device by using power button.
+2. Verify whether AMD Tambourine platform is able to boot completely to device unlock screen or not.]]></actions>
+	<expectedresults><![CDATA[1. After switch on the Power button, the AMD Tambourine platform should be booting to its unlock screen without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8544" name="The device shall support booting from multiple slots">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[160]]></externalid>
+	<fullexternalid><![CDATA[test123-160]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is booting or not with the binaries flashed in A partition]]></summary>
+	<preconditions><![CDATA[1. A and B partition supported Binaries should be present in host PC.
+2. Binaries should be erased in B partition using below command.
+    $ ./fastboot -s tcp:<DUT IP address> erase system_b
+    $ ./fastboot -s tcp:<DUT IP address> erase boot_b
+    $ ./fastboot -s tcp:<DUT IP address> erase vendor_b
+    $ ./fastboot -s tcp:<DUT IP address> erase vbmeta_b
+3. Images should be flashed to A partition only using below command:
+    $  ./flash_images.sh -i <DUT IP address> -v Pie -o . -s A]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Reboot the device.
+2.Check whether device is booting from A partition or not.]]></actions>
+	<expectedresults><![CDATA[1. After completion of flashing binaries in partition A, the DUT should boot up to the Android unlock screen without any issues from the A partition.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8547" name="The device shall support booting from multiple slots">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[161]]></externalid>
+	<fullexternalid><![CDATA[test123-161]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is booting or not with the binaries flashed in B partition]]></summary>
+	<preconditions><![CDATA[1. A and B partition supported Binaries should be present in host PC.
+2. Binaries should be erased in A partition using below command.
+    $ ./fastboot -s tcp:<DUT IP address> erase system_a
+    $ ./fastboot -s tcp:<DUT IP address> erase boot_a
+    $ ./fastboot -s tcp:<DUT IP address> erase vendor_a
+    $ ./fastboot -s tcp:<DUT IP address> erase vbmeta_a
+3. Images should be flashed to B partition only using below command:
+    $  ./flash_images.sh -i <DUT IP address> -v Pie -o . -s B]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Reboot the device.
+2.Check whether device is booting from B partition or not.]]></actions>
+	<expectedresults><![CDATA[1. After completion of flashing binaries in partition B, the DUT should boot up to the Android unlock screen without any issues from the B partition.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8550" name="The device shall support booting from multiple slots, and shoud attempt to boot from the active slot">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[162]]></externalid>
+	<fullexternalid><![CDATA[test123-162]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is booting or not with the binaries flashed in both A and B partitions]]></summary>
+	<preconditions><![CDATA[1. A and B partition supported Binaries should be present in host PC.
+2. Images should be flashed to both A and B partitions using below command:
+    $  ./flash_images.sh -i <DUT IP address> -v Pie -o .
+3. By default A slot has priority.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Reboot the device.
+2.Check whether device is booting from A partition or not.]]></actions>
+	<expectedresults><![CDATA[1. After completion of flashing binaries in partitions both A and B partitions, the DUT should boot up to the Android unlock screen without any issues from the A slot.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8553" name="The device shall maintain two copies of the slot information in separate erase boundaries to account">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[163]]></externalid>
+	<fullexternalid><![CDATA[test123-163]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is booting or not with the binaries flashed in both A and B partitions and system image is erased from A partition with A slot as priority]]></summary>
+	<preconditions><![CDATA[1. A and B partition supported Binaries should be present in host PC.
+2. Images should be flashed to both A and B partitions using below command:
+    $  ./flash_images.sh -i <DUT IP address> -v Pie -o .
+3. By default A slot has priority.
+4. Device should kept in fastboot mode.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Erase the system image from A partition using the following command.
+    $ ./fastboot -s tcp:<DUT IP address> erase system_a
+2. Reboot the device andCheck the DUT behaviour.]]></actions>
+	<expectedresults><![CDATA[1. After erasing system image from the A partition in DUT, if we try to boot the device it will try to boot with A partition images.Because of system image is removed from A partition it will throw “dm-verity device corrupted”error and then the DUT will boot with B partition images.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8556" name="The device shall maintain two copies of the slot information in separate erase boundaries to account">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[164]]></externalid>
+	<fullexternalid><![CDATA[test123-164]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is booting or not with the binaries flashed in both A and B partitions and system image is erased from B partition with B slot as priority]]></summary>
+	<preconditions><![CDATA[1. A and B partition supported Binaries should be present in host PC.
+2. Images should be flashed to both A and B partitions using below command:
+    $  ./flash_images.sh -i <DUT IP address> -v Pie -o .
+3. Set B slot has priority by commnd:
+  $ ./fastboot -s tcp:<DUT IP address> set_active b
+4. Device should kept in fastboot mode.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Erase the system image from A partition using the following command.
+    $ ./fastboot -s tcp:<DUT IP address> erase system_b
+2. Reboot the device andCheck the DUT behaviour.]]></actions>
+	<expectedresults><![CDATA[1. After erasing system image from the B partition in DUT, if we try to boot the device it will try to boot with B partition images.Because of system image is removed from B partition it will throw “dm-verity device corrupted”error and then the DUT will boot with A partition images.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8559" name="The device shall fail to boot when image is invalid">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[165]]></externalid>
+	<fullexternalid><![CDATA[test123-165]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is booting or not with the binaries flashed in A partition and boot image is erased in locked state]]></summary>
+	<preconditions><![CDATA[1. A and B partition supported Binaries should be present in host PC.
+2. Binaries should be erased in B partition using below command.
+    $ ./fastboot -s tcp:<DUT IP address> erase system_b
+    $ ./fastboot -s tcp:<DUT IP address> erase boot_b
+    $ ./fastboot -s tcp:<DUT IP address> erase vendor_b
+    $ ./fastboot -s tcp:<DUT IP address> erase vbmeta_b
+3. Images should be flashed to A partition only using below command:
+    $  ./flash_images.sh -i <DUT IP address> -v Pie -o . -s A
+4. By default A slot has priority and device should be set to locked state.
+5. Device should kept in fastboot mode.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.  Erase the boot image from A partition using the following command.
+   $ ./fastboot -s tcp:<DUT IP address> erase boot_a
+2. Reboot the device and Check its behaviour.
+ ]]></actions>
+	<expectedresults><![CDATA[1. After erasing the boot image, the DUT should not boot upto android unlock screen.
+2. Check the log:
+read_is_device-unlock() ops returned that device is Locked
+avb_ab_flow() returned ERROR_NO_BOOTABLE_SLOTS
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8562" name="The device shall fail to boot when image is invalid">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[166]]></externalid>
+	<fullexternalid><![CDATA[test123-166]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is booting or not with the binaries flashed in B partition and boot image is erased in unlocked state]]></summary>
+	<preconditions><![CDATA[1. A and B partition supported Binaries should be present in host PC.
+2. Binaries should be erased in A partition using below command.
+     $ ./fastboot -s tcp:<DUT IP address> erase system_a
+     $ ./fastboot -s tcp:<DUT IP address> erase boot_a
+     $ ./fastboot -s tcp:<DUT IP address> erase vendor_a
+     $ ./fastboot -s tcp:<DUT IP address> erase vbmeta_a
+3. Images should be flashed to B partition only using below command:
+     $  ./flash_images.sh -i <DUT IP address> -v Pie -o . -s B
+4. By default A slot has priority and device should be set to unlocked state
+5. Device should kept in fastboot mode. 
+6. Set B slot as priority using the following command:
+      $ fastboot -s tcp:<DUT IP address> set_active b ]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Erase the boot image from B partition using the following command.
+   $ ./fastboot -s tcp:<DUT IP address> erase boot_b
+2. Reboot the device andCheck its behaviour.]]></actions>
+	<expectedresults><![CDATA[1. After erasing the boot image, the DUT should not boot upto android unlock screen.
+2. Check the log:
+avb_ab_flow() returned OK_WITH_VERIFICATION_ERROR
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7849" name="Auido" >
+<node_order><![CDATA[2]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8097" name="check if audio decode function on the baord">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[11]]></externalid>
+	<fullexternalid><![CDATA[test123-11]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether the DUT is supporting 
+the Playback of MP3(.mp3) Audio format or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure MP3(.mp3) files are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${audio_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Open the Music Apk then play the downloaded audio file andCheck the behavior]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of MP3(.mp3) Audio format without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8100" name="check if audio decode function on the baord">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[12]]></externalid>
+	<fullexternalid><![CDATA[test123-12]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether
+ the DUT is supporting the Playback of PCM/WAVE(.wav) Audio format or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure PCM/WAVE(.wav) files are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${audio_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Open the Music Apk then play the downloaded audio file andCheck the behavior]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of PCM/WAVE(.wav) Audio format without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8103" name="check if audio encode function on the baord">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[13]]></externalid>
+	<fullexternalid><![CDATA[test123-13]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is 
+supporting the audio recording(Encoding)  functionality or not.]]></summary>
+	<preconditions><![CDATA[1. DUT  should boot up to Android Main menu. 
+2. Make sure large audio files are available
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${audio_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files 
+3. Make sure Voice recorder app is installed in DUT
+- adb install ${path_to_apk}
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the “voice_Recorder.apk”  in the device and start for recording for 1 min then Stop recording and save the recorded with any appropriate name.
+2. Go to Recording files and try to play the recorded file by selecting the same file]]></actions>
+	<expectedresults><![CDATA[1. Should able to record for 1min and save it
+2. Recorded file should be played without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8106" name="check audio sink  to usb headset">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[14]]></externalid>
+	<fullexternalid><![CDATA[test123-14]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is
+ supporting  the audio playing via  USB  headset]]></summary>
+	<preconditions><![CDATA[1. DUT  should boot up to Android Main menu. 
+2. Connect the USB to DUT
+3. Make sure connected USB has some audio files in it
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Play any audio file ]]></actions>
+	<expectedresults><![CDATA[1. The file should be played and it should be audible without any glitches and other disturbances from usb headset]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8109" name="check audio sink  to BT headset">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[15]]></externalid>
+	<fullexternalid><![CDATA[test123-15]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is
+ supporting  the audio playing through BT headset]]></summary>
+	<preconditions><![CDATA[1. DUT  should boot up to Android Main menu. 
+2. pair BT headset  to DUT
+
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Play any audio file which is in USB only.]]></actions>
+	<expectedresults><![CDATA[1. The file should be played and it should be audible without any glitches and other disturbances from usb headset]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7850" name="Video" >
+<node_order><![CDATA[3]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8469" name="video_decode_support_format :H263">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[135]]></externalid>
+	<fullexternalid><![CDATA[test123-135]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the   H263 video codec format
+ with the 3GPP(.3gp) files or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure the H.263 video codec format with the 3GPP(.3gp) files are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} ]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck 
+whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The H.263 video codec format with the 3GPP(.3gp) 
+files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8472" name="video_decode_support_format :MP4">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[136]]></externalid>
+	<fullexternalid><![CDATA[test123-136]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the   MPEG-4(H263v2) video codec format with the (.mp4)  files or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure MPEG-4(H263v2) video codec format with the (.mp4) are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files. 
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The  MPEG-4(H263v2) video codec format with the (.mp4) files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8475" name="video_decode_support_format :H264 with 3gp">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[137]]></externalid>
+	<fullexternalid><![CDATA[test123-137]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the  H264 AVC  video codec 
+format with the 3GPP (.3gp)  files or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure  H264 AVC  video codec format with the 3GPP (.3gp) are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The  H264 AVC  video codec format with the 3GPP (.3gp) files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8478" name="video_decode_support_format :H264">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[138]]></externalid>
+	<fullexternalid><![CDATA[test123-138]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the   H264 AVC  video
+ codec format with the MP4 (.mp4)  files or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure  H264 AVC  video codec format with the MP4 (.mp4) are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files. 
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The  H264 AVC  video codec format with the MP4 (.mp4) files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8481" name="video_decode_support_format :VP8">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[139]]></externalid>
+	<fullexternalid><![CDATA[test123-139]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the   VP8 video 
+codec format with the (.webm)  files or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure VP8 video codec format with the (.mkv) are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The  VP8 video codec format with the (.mkv) files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8484" name="video_decode_support_format :h265">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[140]]></externalid>
+	<fullexternalid><![CDATA[test123-140]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the   H265 video codec
+ format  files or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure VP8 video codec format with the (.webm) are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The  H265 video codec format with the (.webm) files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8487" name="video_decode_support_format :VP9">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[141]]></externalid>
+	<fullexternalid><![CDATA[test123-141]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the  VP9  video codec 
+format with the (.webm)  files or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure VP9  video codec format with the (.webm) are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files. 
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The  VP8 video codec format with the (.webm) files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8490" name="support muti_resolution vidoes">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[142]]></externalid>
+	<fullexternalid><![CDATA[test123-142]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the  video 
+with 720p resolution functionality or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure 720p resolution Videos are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The 720p resolution files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8493" name="support muti_resolution vidoes">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[143]]></externalid>
+	<fullexternalid><![CDATA[test123-143]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the  video 
+with 1080p resolution functionality or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure 1080p resolution Videos are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files. 
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The 1080p resolution files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8496" name="support muti_resolution vidoes">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[144]]></externalid>
+	<fullexternalid><![CDATA[test123-144]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DUT is supporting  the  video 
+with 4k resolution functionality or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Make sure 4k resolution Videos are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Video_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files. 
+3. MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path} 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the MX Player App andCheck whether the downloaded files are playing or not]]></actions>
+	<expectedresults><![CDATA[1.  The 4k resolution files should be played in the MX Player App without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8499" name="video_encode_support_format :H263">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[145]]></externalid>
+	<fullexternalid><![CDATA[test123-145]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[check  the Dut is supporting H263 encoder function or not ]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. open camera application 
+3. choose video icon then select setting on the top right ,choose 'Resolution &Quality'->Video,chose the resolution
+4. click video recored icon ,start record 
+a) install apK using adb commands.
+- adb connect <IP address>
+ MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path}]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. open  camera application well 
+2. can record video and play viaMxplayer  normally
+3. use Mxplayer tocheck video info
+]]></actions>
+	<expectedresults><![CDATA[]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8502" name="video_encode_support_format :H264">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[146]]></externalid>
+	<fullexternalid><![CDATA[test123-146]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[check  the Dut is supporting H264 encoder function or not ]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. open camera application 
+3. choose video icon then select setting on the top right ,choose 'Resolution &Quality'->Video,chose the resolution
+4. click video recored icon ,start record 
+a) install apK using adb commands.
+- adb connect <IP address>
+ MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path}]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. open  camera application well 
+2. can record video and play viaMxplayer  normally
+3. use Mxplayer tocheck video info
+]]></actions>
+	<expectedresults><![CDATA[]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8505" name="video_encode_support_format :H265">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[147]]></externalid>
+	<fullexternalid><![CDATA[test123-147]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[check  the Dut is supporting H265 encoder function or not ]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. open camera application 
+3. choose video icon then select setting on the top right ,choose 'Resolution &Quality'->Video,chose the resolution
+4. click video recored icon ,start record 
+a) install apK using adb commands.
+- adb connect <IP address>
+ MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path}]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. open  camera application well 
+2. can record video and play viaMxplayer  normally
+3. use Mxplayer tocheck video info
+]]></actions>
+	<expectedresults><![CDATA[]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8508" name="video_encode_support_format :VP8">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[148]]></externalid>
+	<fullexternalid><![CDATA[test123-148]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[check  the Dut is supporting VP8 encoder function or not ]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. open camera application 
+3. choose video icon then select setting on the top right ,choose 'Resolution &Quality'->Video,chose the resolution
+4. click video recored icon ,start record 
+a) install apK using adb commands.
+- adb connect <IP address>
+ MX player Application should be installed on DUT. 
+- adb install ${MXplayer_apk_path}]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. open  camera application well 
+2. can record video and play viaMxplayer  normally
+3. use Mxplayer tocheck video info
+]]></actions>
+	<expectedresults><![CDATA[]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8511" name="Shall support at least 8 simultaneous video 
+decoding pipelines at 1080p@30fps">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[149]]></externalid>
+	<fullexternalid><![CDATA[test123-149]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether the DUT is supporting the Playback of 8 instances of H264 content with 1920x1080,20 Mbps and 30fps]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Install MultiPlayer APK in DUT
+    - adb install <apk>
+3. Make sure media files required are available in DUT
+    a) Download above supported files into DUT using adb commands.
+         - adb connect <IP address> 
+         - adb push ${mediafiles_path} /sdcard
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to DUT using adb.
+   - adb connect <IP address>
+2. Execute below adb command to start playback of multiplayer.
+    - adb shell am start -n com.karma.multiplayer/.MainActivity \
+       --es path1 "file:///sdcard/<file1>" \
+       --es path2 "file:///sdcard/<file2>" \
+       --es path3 "file:///sdcard/<file3>" \
+       --es path4 "file:///sdcard/<file4>" \
+       --es path5 "file:///sdcard/<file5>" \
+       --es path6 "file:///sdcard/<file6>" \
+       --es path7 "file:///sdcard/<file7>" \
+       --es path8 "file:///sdcard/<file8>"     
+]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of 8 instances of H264 content without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8514" name="Shall support at least 8 simultaneous video 
+decoding pipelines at 1080p@30fps">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[150]]></externalid>
+	<fullexternalid><![CDATA[test123-150]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether the DUT is supporting the Playback of 8 instances of H265 content with 1920x1080,20 Mbps and 30fps]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Install MultiPlayer APK in DUT
+    - adb install <apk>
+3. Make sure media files required are available in DUT
+    a) Download above supported files into DUT using adb commands.
+         - adb connect <IP address> 
+         - adb push ${mediafiles_path} /sdcard
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to DUT using adb.
+   - adb connect <IP address>
+2. Execute below adb command to start playback of multiplayer.
+    - adb shell am start -n com.karma.multiplayer/.MainActivity \
+       --es path1 "file:///sdcard/<file1>" \
+       --es path2 "file:///sdcard/<file2>" \
+       --es path3 "file:///sdcard/<file3>" \
+       --es path4 "file:///sdcard/<file4>" \
+       --es path5 "file:///sdcard/<file5>" \
+       --es path6 "file:///sdcard/<file6>" \
+       --es path7 "file:///sdcard/<file7>" \
+       --es path8 "file:///sdcard/<file8>"     
+]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of 8 instances of H265 content without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8517" name="Shall support at least 8 simultaneous video 
+decoding pipelines at 1080p@30fps">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[151]]></externalid>
+	<fullexternalid><![CDATA[test123-151]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether the DUT is supporting the Playback of 8 instances of VP9 content with 1920x1080,20 Mbps and 30fps]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Install MultiPlayer APK in DUT
+    - adb install <apk>
+3. Make sure media files required are available in DUT
+    a) Download above supported files into DUT using adb commands.
+         - adb connect <IP address> 
+         - adb push ${mediafiles_path} /sdcard
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to DUT using adb.
+   - adb connect <IP address>
+2. Execute below adb command to start playback of multiplayer.
+    - adb shell am start -n com.karma.multiplayer/.MainActivity \
+       --es path1 "file:///sdcard/<file1>" \
+       --es path2 "file:///sdcard/<file2>" \
+       --es path3 "file:///sdcard/<file3>" \
+       --es path4 "file:///sdcard/<file4>" \
+       --es path5 "file:///sdcard/<file5>" \
+       --es path6 "file:///sdcard/<file6>" \
+       --es path7 "file:///sdcard/<file7>" \
+       --es path8 "file:///sdcard/<file8>"     
+]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of 8 instances of VP9 content without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8520" name="Shall support at least 2 simultaneous video decoding pipelines at 4K@30fps">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[152]]></externalid>
+	<fullexternalid><![CDATA[test123-152]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether the DUT is supporting the Playback of 2 instances of H264 content with 4096x2160,80 Mbps and 30fps]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Install MultiPlayer APK in DUT
+    - adb install <apk>
+3. Make sure media files required are available in DUT
+    a) Download above supported files into DUT using adb commands.
+         - adb connect <IP address> 
+         - adb push ${mediafiles_path} /sdcard
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to DUT using adb.
+   - adb connect <IP address>
+2. Execute below adb command to start playback of multiplayer.
+    - adb shell am start -n com.karma.multiplayer/.MainActivity \
+       --es path1 "file:///sdcard/<file1>" \
+       --es path2 "file:///sdcard/<file2>" 
+]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of 2 instances of H264 content without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8523" name="Shall support at least 2 simultaneous video decoding pipelines at 4K@30fps">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[153]]></externalid>
+	<fullexternalid><![CDATA[test123-153]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether the DUT is supporting the Playback of 2 instances of H265 content with 4096x2160,80 Mbps and 30fps]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Install MultiPlayer APK in DUT
+    - adb install <apk>
+3. Make sure media files required are available in DUT
+    a) Download above supported files into DUT using adb commands.
+         - adb connect <IP address> 
+         - adb push ${mediafiles_path} /sdcard
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to DUT using adb.
+   - adb connect <IP address>
+2. Execute below adb command to start playback of multiplayer.
+    - adb shell am start -n com.karma.multiplayer/.MainActivity \
+       --es path1 "file:///sdcard/<file1>" \
+       --es path2 "file:///sdcard/<file2>" 
+]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of 2 instances of H265 content without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8526" name="Shall support at least 2 simultaneous video decoding pipelines at 4K@30fps">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[154]]></externalid>
+	<fullexternalid><![CDATA[test123-154]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether the DUT is supporting the Playback of 2 instances of VP9 content with 4096x2160,80 Mbps and 30fps]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. Install MultiPlayer APK in DUT
+    - adb install <apk>
+3. Make sure media files required are available in DUT
+    a) Download above supported files into DUT using adb commands.
+         - adb connect <IP address> 
+         - adb push ${mediafiles_path} /sdcard
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to DUT using adb.
+   - adb connect <IP address>
+2. Execute below adb command to start playback of multiplayer.
+    - adb shell am start -n com.karma.multiplayer/.MainActivity \
+       --es path1 "file:///sdcard/<file1>" \
+       --es path2 "file:///sdcard/<file2>" 
+]]></actions>
+	<expectedresults><![CDATA[1.The DUT should support the Playback of 2 instances of VP9 content without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7851" name="UMR" >
+<node_order><![CDATA[4]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8169" name="Check read/write behaviour of nbios mmMM_INDEX register">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[35]]></externalid>
+	<fullexternalid><![CDATA[test123-35]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Checking wether the read and write values are same or 
+not in nbio’s mmMM_INDEX register]]></summary>
+	<preconditions><![CDATA[1.Raven Board should be flashed and booted to android screen.
+2.Connect your host machine to target board  by using "adb connect <Ip_of_target_board>"
+3.Umr tool should be enabled in AOSP image.
+Check wether the umr is included in AOSP image or not by using ‘adb shell umr -h’ command.
+4.Open adb shell in sudo mode using command ‘adb shell’ enter then type ‘su’ in adb shell and do enter.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Write ‘0x10’ to nbio’s mmMM_INDEX register by running ‘umr --write mmMM_INDEX 0x10’ command in adb shell.
+2.Read back same register by using ‘umr --read mmMM_INDEX’ command in adb shell.]]></actions>
+	<expectedresults><![CDATA[Red value should be same as written value.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8172" name="Check Ring and PM4 decoding for gfx module">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[36]]></externalid>
+	<fullexternalid><![CDATA[test123-36]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Checking wether the word count is same as count value along 
+with same opcode value. ]]></summary>
+	<preconditions><![CDATA[1.Raven Board should be flashed and booted to android screen.
+2.Connect your host machine to target board  by using "adb connect <Ip_of_target_board>"
+3.Umr tool should be enabled in AOSP image.
+4.Check wether the umr is included in AOSP image or not by using ‘adb shell umr -h’ command.
+5.Open adb shell in sudo mode using command ‘adb shell’ enter then type ‘su’ in adb shell and do enter.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Run graphics realted application(Ex:3D-Mark) for ~2Min and close it.
+2.Find some non “NOP” packet by running “umr --ring gfx[start:end]” command in adb shell.
+Ex: umr --ring[0:100]
+Check word count and opcode values.]]></actions>
+	<expectedresults><![CDATA[1.The “word” should be ascending and total number should be the same as “COUNT”.
+2.The OPCODE should be the same :
+Ex:
+ ... PKT3, COUNT:2, PREDICATE:0, SHADER_TYPE:0,
+---+ PKT3 OPCODE 0x2d, word 0: INDEX_COUNT: 3
+---+ PKT3 OPCODE 0x2d, word 1: DRAW_INITIATOR: 0x2]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7852" name="Camera" >
+<node_order><![CDATA[5]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8175" name="Check camera open">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[37]]></externalid>
+	<fullexternalid><![CDATA[test123-37]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify Camera is Opening without any Flickering]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu
+2. Camera functionality should be supported in the build]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[
+1.Launch the Camera Application.
+2.Look for any flickering or corruptions on start up.]]></actions>
+	<expectedresults><![CDATA[1.Camera should launch without any flickering or corruptions.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8178" name="Check video recording functionality">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[38]]></externalid>
+	<fullexternalid><![CDATA[test123-38]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether Camera supports video recording feature]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu
+2. Camera functionality should be supported in the build]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1 Select camera icon available in home screen
+2.Select video recording option and try recording video of the objects.                                  
+3.Check whether proper video is recorded and stored in the respective folder in sdcard.]]></actions>
+	<expectedresults><![CDATA[1.recod the video about 1 minutes
+2. close revord th video button 
+3. using Gallery app to play the video well ]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8181" name="Check able to capture an image">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[39]]></externalid>
+	<fullexternalid><![CDATA[test123-39]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[check the DUT is supporting to take the picture]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu
+2. Camera functionality should be supported in the build]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[
+1 Select camera icon available in home screen 2.Try to capture the image in Normal mode.       3.Check whether proper image is captured and stored in the respective folder in sdcard.]]></actions>
+	<expectedresults><![CDATA[1. Image should be captured and stored in the respective folder in sdcard.
+2.using Gallery app to play the picture well]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7853" name="Graphic" >
+<node_order><![CDATA[6]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8184" name="check vulkan function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[40]]></externalid>
+	<fullexternalid><![CDATA[test123-40]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check 3D graphic tests are 
+playing without any issues in Antutu benchmark]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. The “AnTuTu3DBench-com.antutu.benchmark.full-6000400-v6.0.4.apk” benchmark should be available.
+- adb install ${path_to_apk}
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the app andCheck whether 3D graphics tests(Marooned and Garden) are playing without any corruptions or not.]]></actions>
+	<expectedresults><![CDATA[1. The antutu 3D graphics tests should be played without any corruptions.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8187" name="check  OpenGL ES function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[41]]></externalid>
+	<fullexternalid><![CDATA[test123-41]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether all the 
+OpenGL ES graphics tests are playing without any issues or not in 3D Mark  benchmark]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. The “3D Mark(android_gammers_com.futuremark.dmandroid.application_2.0.4580-4580.apk”  should be available.
+- adb install ${path_to_apk}
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the app and Playback the 3D Mark slingshot extreme and slingshot extreme unlimitted tests for OpenGL ES thenCheck all are playing without any corruptions or not.]]></actions>
+	<expectedresults><![CDATA[1. All the OpenGL ES tests in Slingshot extreme and slingshot exreme unlimitted tests in 3D mark should be played without any corruptions.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8190" name="check  OpenGL function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[42]]></externalid>
+	<fullexternalid><![CDATA[test123-42]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether the DUT 
+supports OpenGL4.5 functionality or not]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT completely to its unlock screen.
+2. Build should support Ethernet.
+3. Ethernet cable should be available and it has Internet connection.
+4.Connect the Ethernet Cable to the DUT Ethernet port.
+5. Should have Host PC.
+6. should have the DUT IP Address
+7. DUT should support OpenGL4.5 feature and also it should have the “ test-opengl4_basic “ binary under system/bin/ directory.
+8. DUT should support adb over Ethernet functionality.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Open terminal in Host PC and enter the “adb connect <DUT IP Address> ” command.
+2. Open terminal in PC, goto “ system/bin/ “ path and run the test-opengl4_basic binary using the command  “ ./test-opengl4_basic “.
+3.Check whether DUT display is showing the triangle shape or not.]]></actions>
+	<expectedresults><![CDATA[1. After running the “ test-opengl4_basic “ binary from DUT system/bin/ directory, the “Triangle” shape image should be displayed in DUT then we should say, DUT should supports the OpenGL4.5 functionality.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8193" name="check  vulkan1.0.3 function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[43]]></externalid>
+	<fullexternalid><![CDATA[test123-43]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Checks whether 
+DUT supports vulkan1.0.3 functionality or not]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT completely to its unlock screen.
+2. Build should support Ethernet.
+3. Ethernet cable should be available and it has Internet connection.
+4.Connect the Ethernet Cable to the DUT Ethernet port.
+5. Should have Host PC.
+6. should have the DUT IP Address
+7. DUT should support vulkan1.0.3 feature.
+8. DUT should support adb over Ethernet functionality.
+9. The “ 15-draw_cube “ and  “ draw_textured_cube “ APKs should be available and installed in the DUT.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the 15-draw_cube APK in the device andCheck whether  three dimensional cube is displayed or not.
+2. Open the draw_textured_cube APK in the device andCheck whether three dimensional textured cube is displaying properly or not.]]></actions>
+	<expectedresults><![CDATA[1. After opening the  “15-draw_cube “ APK in the device, device should display a three dimensional cube without any issues then we should say, DUT is supporting the vulkan functionality.
+2. After opening the  “draw_textured_cube “ APK in the device, device should display a three dimensional textured cube without any issues then we should say, DUT is supporting the vulkan functionality.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8196" name="check  OpenGL ES function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[44]]></externalid>
+	<fullexternalid><![CDATA[test123-44]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether 
+OpenGL 1080p Manhattan offscreen ES 3.0 test is playing properly in GFXBench5.0 benchmark]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. The “GFXBench GL Benchmark 5.0”  should be available.
+- adb install ${path_to_apk}
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[Open the GFX app and Run Open Gl "1080p Manhattan Offscreen ES 3.0"test and check test is playing without any corruptions or not.]]></actions>
+	<expectedresults><![CDATA[Open Gl "1080p Manhattan Offscreen ES 3.0" test should run properly without any issues]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8199" name="check  vulkan">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[45]]></externalid>
+	<fullexternalid><![CDATA[test123-45]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check Vulkan 
+graphics tests in 3DMark-the gamers benchmark]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. The “3D Mark(android_gammers_com.futuremark.dmandroid.application_2.0.4580-4580.apk”  should be available.
+- adb install ${path_to_apk}
+3. DUT should support Vulkan graphics.
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the app and Run Viulkan graphics tests andCheck vulkan graphics tests are playing without any issues or not.]]></actions>
+	<expectedresults><![CDATA[1. All the Vulkan graphics  tests in 3D mark should be played without any corruptions.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8202" name="check  vulkan">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[46]]></externalid>
+	<fullexternalid><![CDATA[test123-46]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check GL GFX 5.0(Vulkan ) 
+tests in benchmark]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. The “GFXBench GL Benchmark 5.0”  should be available.
+- adb install ${path_to_apk}]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the app and Run Vulkan tests
+a) "Aztec Ruins Vulkan(High Tier)" , 
+b) "1440p Aztec Ruins Vulkan (High Tier) Offscren",
+c) "Aztec Ruins Vulkan (Normal Tier)",
+d) "1090p Aztec Ruins Vulkan (Normal Tier Offscreen" 
+andCheck all are playing without any corruptions or not.]]></actions>
+	<expectedresults><![CDATA[All the Vulkan tests should play without any issues]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8205" name="check  Opengl">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[47]]></externalid>
+	<fullexternalid><![CDATA[test123-47]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check GL GFX 5.0(Opengl ) 
+tests in benchmark]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. The “GFXBench GL Benchmark 5.0”  should be available.
+- adb install ${path_to_apk}]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the app and Run Open Gl  "Aztec Ruins OpenGl -ES 3.1", "1440p Aztec Ruins OpenGl (High Tier) Offscreen ES -3.1" , "Aztec Ruins OpenGL(Normal Tier) -ES 3.1", "1080p Aztec Ruins OpenGL (Normal Tier) Offscreen - ES 3.1", "Car Chase ES 3.1",  "1080p Car Chase Offscreen- ES 3.1", "Manhattan ES 3.1", "1080p Manhattan 31. Offscreen- ES 3.1", "1440p Manhattan 3.1.1 Offscreen -ES 3.1", "gl_manhattan_wqhd_off- ES 3.0", "Manhattan- ES 3.0", "1080p Manhattan Offscreen ES 3.0", "gl_trex_wqhd_off- ES 2.0", "Trex -ES 2.0", "1080 T rex Offscreen ES 2.0", "gl_egypt ES 2.0", "gl_egypt_off ES 2.0"  tests andCheck all are playing without any corruptions or not.]]></actions>
+	<expectedresults><![CDATA[All Open Gl tests should run properly without any issues]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7854" name="Image&amp;Text" >
+<node_order><![CDATA[7]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8208" name="check  JPEG decoder function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[48]]></externalid>
+	<fullexternalid><![CDATA[test123-48]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT is supporting the 
+JPEG image decode functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Make sure  JPEG image files are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${image_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the above copied image in Gallery App andCheck whether image is clearly visible or not.]]></actions>
+	<expectedresults><![CDATA[1. DUT should display the .jpeg image clearly without any issues]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8211" name="check  PNG decoder function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[49]]></externalid>
+	<fullexternalid><![CDATA[test123-49]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT is supporting 
+the PNG image decode functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Make sure  PNG image files are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Image_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the above copied image in Gallery App andCheck whether image is clearly visible or not.]]></actions>
+	<expectedresults><![CDATA[1. DUT should display the .png image clearly without any issues]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8214" name="check webp decoder function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[50]]></externalid>
+	<fullexternalid><![CDATA[test123-50]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT is supporting 
+the webp image decode functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Make sure webp image files are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${Image_path} /sdcard 
+b) Sync and reboot the DUT to view the downloaded files.
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open the above copied image in Gallery App andCheck whether image is clearly visible or not.]]></actions>
+	<expectedresults><![CDATA[1. DUT should display the .png image clearly without any issues]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8217" name="check jpeg encoder function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[51]]></externalid>
+	<fullexternalid><![CDATA[test123-51]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT is supporting 
+jpeg image encode functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2.open camera application 
+3. clikc camera and then begin to take the photo
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.open the picutre via  Gallery App ]]></actions>
+	<expectedresults><![CDATA[1. DUT should display the  image clearly without any issues]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8220" name="check the function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[52]]></externalid>
+	<fullexternalid><![CDATA[test123-52]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT is supporting the text file open and close functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Copy text file into device which has some data using adb command : 
+“ adb push ${text_path} /sdcard/text/
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open text file from any application like gallery and other third party document reader applications.]]></actions>
+	<expectedresults><![CDATA[1. DUT should be able to open the text file and user can read the text file]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8223" name="check the function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[53]]></externalid>
+	<fullexternalid><![CDATA[test123-53]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT is supporting the text files delete functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Copy text file into device which has some data using adb command : 
+“ adb push ${text_path} /sdcard/text/
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open text file from any application like gallery and other third party document reader applications and Click on delete option then Select Yes from the dialogue box to delete the text file]]></actions>
+	<expectedresults><![CDATA[1. DUT should be able to delete the text file from its storage]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7855" name="Communication" >
+<node_order><![CDATA[8]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8565" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[167]]></externalid>
+	<fullexternalid><![CDATA[test123-167]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify WiFi option enabling/disabling functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Wi-Fi functionality should be supported in the build
+3. WiFi module should be present on device.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Go to Settings --> Network & Internet ----> Wi-Fi settings
+- Enable WiFi option and verify whether WiFi option is ON or not.
+- Disable WiFi option andCheck whether WiFi is OFF or not.
+]]></actions>
+	<expectedresults><![CDATA[1. WiFi should be ON when WiFi option isChecked and WiFi should be off when the WiFi option is unchecked.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8568" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[168]]></externalid>
+	<fullexternalid><![CDATA[test123-168]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether device is able to scan and 
+show all the available supported WiFi frequency networks or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Enable WIfiin DUT
+ Go to Settings --> Network & Internet ----> Wi-Fi settings --> enable
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Verify whether Wi-Fi is able to scan and show all the supported frequency bands available networks when the WiFi option is enabled.]]></actions>
+	<expectedresults><![CDATA[1. Wi-Fi should scan and show all the supported frequency bands available networks when the WiFi option is enabled.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8571" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[169]]></externalid>
+	<fullexternalid><![CDATA[test123-169]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether tester is able to browse 
+on the target DUT using the WiFi network or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Enable WIfiin DUT
+ Go to Settings --> Network & Internet ----> Wi-Fi settings --> enable
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open browser app, type any URL and start browsing]]></actions>
+	<expectedresults><![CDATA[1. The DUT should be able to access all available websites in the browser.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8574" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[170]]></externalid>
+	<fullexternalid><![CDATA[test123-170]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify Turn ON/OFF of Bluetooth functionality]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android unlock screen
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Go to settings --> Connected Devices --> Connection Preferences --> Bluetooth
+thenCheck the behavior when bluetooth is enabled and disabled
+]]></actions>
+	<expectedresults><![CDATA[User should be able to turn enabled and turn disabled the bluetooth successfully]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8577" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[171]]></externalid>
+	<fullexternalid><![CDATA[test123-171]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify bluetooth Scan functionality.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android unlock screen
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Turn On Bluetooth by navigating to settings --> Connected Devices --> Connection Preferences --> Bluetooth
+ and make it as discoverable by other Bluetooth devices
+]]></actions>
+	<expectedresults><![CDATA[User shall be able to see all the Near by BT devices list upon turn ON the BT or Refresh the BT]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8580" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[172]]></externalid>
+	<fullexternalid><![CDATA[test123-172]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check for FTP functionality, 
+transfer of file to and from device]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android unlock screen
+2. Turn On Bluetooth in DUT by navigating to ettings --> Connected Devices --> Connection Preferences --> Bluetooth
+3. Turn On Bluetooth in FTP device 
+4. Pair the FTP device with DUT
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open Gallery app and long press the image/video then select the share icon--> Bluetooth on the top and select the paried FTP device]]></actions>
+	<expectedresults><![CDATA[User should be able to send the Images/Videos via BT to FTP]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8583" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[173]]></externalid>
+	<fullexternalid><![CDATA[test123-173]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the Ethernet detection functionality.]]></summary>
+	<preconditions><![CDATA[1. Build should support Ethernet.
+2. Ethernet cable should be available and it has Internet connection.
+3. Boot the DUT completely to its unlock screen.
+4. Connect Ethernet Cable to the Raven Board Ethernet port.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Check whether Ethernet cable is detected or not by looking at the Ethernet port. If the cable is detected  then LED light will blink at the port. ]]></actions>
+	<expectedresults><![CDATA[The Ethernet cable should detect when it connected to ethernet port and also LED should blink at ethernet port.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8586" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[174]]></externalid>
+	<fullexternalid><![CDATA[test123-174]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT supports the SSH connection functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT completely to its unlock screen.
+2. Build should support Ethernet.
+3. Ethernet cable should be available and it has Internet connection.
+4.Connect the Ethernet Cable to the DUT Ethernet port.
+5. Should have Host PC.
+6. should have the DUT IP Address.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open terminal in host PC.
+2. Enter the ssh command “ssh root@<DUT IP Address>” for connecting the DUT via SSH.
+3. Confirm the ssh connection status by entering the “ ls “ command in the host PC terminal .If host PC really connected to DUT via SSH then “ ls “ command will display the list of files or folders of the DUT.]]></actions>
+	<expectedresults><![CDATA[1. After entering the “ ssh root@<DUT IP address> “ in host PC terminal,DUT  should connect via SSH. And it should list all the files or folder in it after entering the “ ls “ command in the host PC terminal.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8589" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[175]]></externalid>
+	<fullexternalid><![CDATA[test123-175]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify the adb commands(DUT connected over ethernet) 
+functionality i.e. adb push, adb pull and adb install]]></summary>
+	<preconditions><![CDATA[1. Build should support Ethernet.
+2. Ethernet cable should be available and it has Internet connection.
+3. Connect the Device to host over the Ethernet.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.  Run the ADB commands like adb pull and push,adb install, adb logcat etc., commands in the host.]]></actions>
+	<expectedresults><![CDATA[1.All the ADB commands should work properly without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8592" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[176]]></externalid>
+	<fullexternalid><![CDATA[test123-176]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify WiFi option enabling/disabling functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Wi-Fi functionality should be supported in the build
+3. WiFi module should be present on device.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Go to Settings --> Network & Internet ----> Wi-Fi settings
+- Enable WiFi option and verify whether WiFi option is ON or not.
+- Disable WiFi option andCheck whether WiFi is OFF or not.
+]]></actions>
+	<expectedresults><![CDATA[1. WiFi should be ON when WiFi option isChecked and WiFi should be off when the WiFi option is unchecked.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8595" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[177]]></externalid>
+	<fullexternalid><![CDATA[test123-177]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether device is able to scan and 
+show all the available supported WiFi frequency networks or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Enable WIfiin DUT
+ Go to Settings --> Network & Internet ----> Wi-Fi settings --> enable
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Verify whether Wi-Fi is able to scan and show all the supported frequency bands available networks when the WiFi option is enabled.]]></actions>
+	<expectedresults><![CDATA[1. Wi-Fi should scan and show all the supported frequency bands available networks when the WiFi option is enabled.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8598" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[178]]></externalid>
+	<fullexternalid><![CDATA[test123-178]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether tester is able to browse 
+on the target DUT using the WiFi network or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. Enable WIfiin DUT
+ Go to Settings --> Network & Internet ----> Wi-Fi settings --> enable
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open browser app, type any URL and start browsing]]></actions>
+	<expectedresults><![CDATA[1. The DUT should be able to access all available websites in the browser.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8601" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[179]]></externalid>
+	<fullexternalid><![CDATA[test123-179]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify Turn ON/OFF of Bluetooth functionality]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android unlock screen
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Go to settings --> Connected Devices --> Connection Preferences --> Bluetooth
+thenCheck the behavior when bluetooth is enabled and disabled
+]]></actions>
+	<expectedresults><![CDATA[User should be able to turn enabled and turn disabled the bluetooth successfully]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8604" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[180]]></externalid>
+	<fullexternalid><![CDATA[test123-180]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify bluetooth Scan functionality.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android unlock screen
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Turn On Bluetooth by navigating to settings --> Connected Devices --> Connection Preferences --> Bluetooth
+ and make it as discoverable by other Bluetooth devices
+]]></actions>
+	<expectedresults><![CDATA[User shall be able to see all the Near by BT devices list upon turn ON the BT or Refresh the BT]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8607" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[181]]></externalid>
+	<fullexternalid><![CDATA[test123-181]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check for FTP functionality, 
+transfer of file to and from device]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android unlock screen
+2. Turn On Bluetooth in DUT by navigating to ettings --> Connected Devices --> Connection Preferences --> Bluetooth
+3. Turn On Bluetooth in FTP device 
+4. Pair the FTP device with DUT
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open Gallery app and long press the image/video then select the share icon--> Bluetooth on the top and select the paried FTP device]]></actions>
+	<expectedresults><![CDATA[User should be able to send the Images/Videos via BT to FTP]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8610" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[182]]></externalid>
+	<fullexternalid><![CDATA[test123-182]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the Ethernet detection functionality.]]></summary>
+	<preconditions><![CDATA[1. Build should support Ethernet.
+2. Ethernet cable should be available and it has Internet connection.
+3. Boot the DUT completely to its unlock screen.
+4. Connect Ethernet Cable to the Raven Board Ethernet port.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Check whether Ethernet cable is detected or not by looking at the Ethernet port. If the cable is detected  then LED light will blink at the port. ]]></actions>
+	<expectedresults><![CDATA[The Ethernet cable should detect when it connected to ethernet port and also LED should blink at ethernet port.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8613" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[183]]></externalid>
+	<fullexternalid><![CDATA[test123-183]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DUT supports the SSH connection functionality or not.]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT completely to its unlock screen.
+2. Build should support Ethernet.
+3. Ethernet cable should be available and it has Internet connection.
+4.Connect the Ethernet Cable to the DUT Ethernet port.
+5. Should have Host PC.
+6. should have the DUT IP Address.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open terminal in host PC.
+2. Enter the ssh command “ssh root@<DUT IP Address>” for connecting the DUT via SSH.
+3. Confirm the ssh connection status by entering the “ ls “ command in the host PC terminal .If host PC really connected to DUT via SSH then “ ls “ command will display the list of files or folders of the DUT.]]></actions>
+	<expectedresults><![CDATA[1. After entering the “ ssh root@<DUT IP address> “ in host PC terminal,DUT  should connect via SSH. And it should list all the files or folder in it after entering the “ ls “ command in the host PC terminal.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8616" name="check basic function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[184]]></externalid>
+	<fullexternalid><![CDATA[test123-184]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify the adb commands(DUT connected over ethernet) 
+functionality i.e. adb push, adb pull and adb install]]></summary>
+	<preconditions><![CDATA[1. Build should support Ethernet.
+2. Ethernet cable should be available and it has Internet connection.
+3. Connect the Device to host over the Ethernet.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.  Run the ADB commands like adb pull and push,adb install, adb logcat etc., commands in the host.]]></actions>
+	<expectedresults><![CDATA[1.All the ADB commands should work properly without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7856" name="Display" >
+<node_order><![CDATA[9]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8283" name="check DP display fucntion">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[73]]></externalid>
+	<fullexternalid><![CDATA[test123-73]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DP display is detecting or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. DP connection port should be existed in the board.
+3. DP display should be connected to device DP port]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Enter the command “ adb shell cat /sys/class/drm/card0-DP-1/status“ in pc terminal andCheck the behavior                        
+]]></actions>
+	<expectedresults><![CDATA[1. “connected” message should be displayed.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8286" name="check DP display fucntion  with boot">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[74]]></externalid>
+	<fullexternalid><![CDATA[test123-74]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check DP display is coming or not 
+after power on the device]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. DP connection port should be existed in the board.
+3. DP display should be connected to the board]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Power on the board andCheck the display screen.]]></actions>
+	<expectedresults><![CDATA[1.Board should bootup properly with out any issues 
+AND there should not be screen corruptions or hangs. 
+AND Display screen should be shown properly without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8289" name="check DP display fucntion  after resume">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[75]]></externalid>
+	<fullexternalid><![CDATA[test123-75]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the DP Display after Suspend and Resume]]></summary>
+	<preconditions><![CDATA[1.  DUT should boot up to Android Main menu.
+2. DP connection port should be existed in the board.
+3. DP display should be connected to device DP port
+4. USB Keyboard and Mouse should be connected to device.
+5. Navigated to display settings from settings option ->Disabled stay awake option
+6. Display sleep time is set to 15 seconds ]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Leave the DUT idle for 15 secs and 
+Check the behavior
+2. Resume the Device by pressing the Space bar button in Keyboard andCheck the behavior]]></actions>
+	<expectedresults><![CDATA[1. DUT should go to suspend state
+2. Display screen should be shown properly without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8292" name="check  two display function (DP/HDMI)">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[76]]></externalid>
+	<fullexternalid><![CDATA[test123-76]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check HDMI display Hot-plug after boot 
+with SST DP display]]></summary>
+	<preconditions><![CDATA[1. Android OS should be installed on the Raven board. 
+2. DP, HDMI connection ports exist in the board.
+3. SST DP display should be connected to device DP port
+4. Raven board should boot up to android 
+
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Hot-plug(connect) the HDMI display to the board andCheck the behavior
+]]></actions>
+	<expectedresults><![CDATA[1. Both displays should be detected and lighted up.
+AND content shown in two displays should be same ]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8295" name="check  two display function (DP/HDMI)">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[77]]></externalid>
+	<fullexternalid><![CDATA[test123-77]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check HDMI display Hot-plug
+ while booting with SST DP display]]></summary>
+	<preconditions><![CDATA[1.  Android OS should be installed on the Raven board. 
+2. DP, HDMI connection ports exist in the board.
+3. SST DP display should be connected to device DP port
+4. Power on the Raven board 
+
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. While Raven board is booting, hot-plug(connect) the HDMI display to the board andCheck the behavior
+]]></actions>
+	<expectedresults><![CDATA[1. Both displays should be detected and lighted up.
+AND content shown in two displays should be same ]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8298" name="check  two display function (DP/HDMI)">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[78]]></externalid>
+	<fullexternalid><![CDATA[test123-78]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Connect HDMI display and SST DP display and boot ]]></summary>
+	<preconditions><![CDATA[1. Android OS should be installed on the Raven board. 
+2. DP, HDMI connection ports exist in the board.
+3. SST DP display should be connected to device DP port
+4. HDMI display should be connected to device HDMI port 
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[
+
+
+1. Power on the board and check the behavior
+]]></actions>
+	<expectedresults><![CDATA[1. Both displays should be detected and lighted up.
+AND content shown in two displays should be same ]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8301" name="check SINK resolution for indepent DP">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[79]]></externalid>
+	<fullexternalid><![CDATA[test123-79]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether DUT is detecting the following  1920x1080, 
+2560x1600, 
+3440x1440 & 
+3840x2160 resolution displays  or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. DP connection port should existed in the board.
+3. Below DP display resolution monitors should be available for testing:
+1920x1080, 2560x1600, 3440x1440 & 3840x2160]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect the DP display of resolution 1920x1080 to the board and then power on the board.
+AND Using adb command  “adb shell wm size”Check the behavior
+Repeat for all the resolutions mentioned in the title
+
+
+
+
+]]></actions>
+	<expectedresults><![CDATA[1. DUT  should detect following display resolutions: 1920x1080, 
+2560x1600, 
+3440x1440 & 
+3840x2160 with out any issues  and shall give the resolution values correctly in adb command]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8304" name="check  DP MST function via Daisy chain">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[80]]></externalid>
+	<fullexternalid><![CDATA[test123-80]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[This test-case is to check two 1.2 enabled 
+MST DP displays connection and boot in Daisy Chain]]></summary>
+	<preconditions><![CDATA[1. Android OS should be installed on the Raven board.
+2. Board used for testing supports DisplayPort 1.2 MST
+3. DisplayPort 1.2 capable MST monitors are available
+4. Connect DisplayPort In on the first monitor to board
+5. Connect DisplayPort Out on the first monitor to DisplayPort In on the second monitor.
+6. Using the On-Screen Display(OSD) menu, Enabled DisplayPort 1.2 on all displays
+ 
+
+
+    
+
+
+
+
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Power on the board and check the behavior
+
+]]></actions>
+	<expectedresults><![CDATA[1. Both displays should be detected and lighted up.
+AND content shown in two displays should be same ]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8307" name="check  DP MST function via Daisy chain">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[81]]></externalid>
+	<fullexternalid><![CDATA[test123-81]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[This test case is to verify 
+the color format is same in Daisy Chain.]]></summary>
+	<preconditions><![CDATA[1. MST display 1 should be connected to the device.
+2. Raven Board should be flashed and should boot to android screen.
+3. 4 MST DP displays should be connected in Daisy chain.
+4. Using the On-Screen Display (OSD) menu, Enable DisplayPort 1.2 for first three displays.
+5. Ensure that the last monitor in the chain has DisplayPort 1.2 mode Disabled.
+6. place the test application in device by using command 
+adb push PATH/test-multi-displays data/app
+7. Change the display_format parameter in config.txt and push into DUT.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Change the format in display 1 by using the  test-multi-displays application.
+-adb shell data/app/test-multi-displays –gtest_filter=MultiDisplayTestPRESENT_MultiDisplay_MirrorMode and check in all displays.
+
+
+Note: Supported pixel formats.
+RGB565
+RGB888
+RGBA8888                                                           RGBX8888                                                     
+BGRA 8888                                                                      ]]></actions>
+	<expectedresults><![CDATA[1. Format of the display should be changed.
+AND Format of all connected displays should be same as primary display.
+
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8310" name="check  DP MST function via Daisy chain">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[82]]></externalid>
+	<fullexternalid><![CDATA[test123-82]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[This test case is to verify the default Daisy Chain mode.]]></summary>
+	<preconditions><![CDATA[1. MST display 1 should be connected to the device.
+2. Raven Board should be flashed and should boot to android screen.
+3. 4 MST DP displays should be connected in Daisy chain.
+4. Using the On-Screen Display (OSD) menu, Enable DisplayPort 1.2 for first three displays.
+5. Ensure that the last monitor in the chain has DisplayPort 1.2 mode Disabled.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[
+1. Check the default display mode of all the connected MST displays.]]></actions>
+	<expectedresults><![CDATA[1. By Default display mode should be in mirror mode.
+AND Display contents should be same in all 4 displays.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8313" name="check  DP MST function via MST Hub">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[83]]></externalid>
+	<fullexternalid><![CDATA[test123-83]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[This test-case is check two SST DP 
+displays connection and boot in MST Hub]]></summary>
+	<preconditions><![CDATA[1. Android OS should be installed on the Raven board. 
+2. DP connection ports exist in the board.
+3. MST Hub should be connected to board
+4. Two SST DP displays should be connected to MST Hub
+
+
+
+    
+
+
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Power on the board and check the behavior
+]]></actions>
+	<expectedresults><![CDATA[1. Displays should be detected and lighted up.
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8316" name="check  DP MST  and HDMI fucntion">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[84]]></externalid>
+	<fullexternalid><![CDATA[test123-84]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Connect HDMI display and MST DP 1.2 enabled display and boot ]]></summary>
+	<preconditions><![CDATA[1. Android OS should be installed on the Raven board. 
+2. DP, HDMI connection ports exist in the board.
+3. MST DP display should be connected to device DP port
+4. Using the On-Screen Display(OSD) menu, Enabled Display Port 1.2 on MST monitor
+5. HDMI display should be connected to device HDMI port 
+
+
+
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Power on the board and check the behavior
+]]></actions>
+	<expectedresults><![CDATA[1. Both displays should be detected and lighted up.
+AND content shown in two displays should be same ]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8319" name="check  RGBX colour format on MST displays">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[85]]></externalid>
+	<fullexternalid><![CDATA[test123-85]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Connect 2 MST displays with RGBX colour format]]></summary>
+	<preconditions><![CDATA[1. DP connection ports should exist in the board,Display Port 1.2 MST capable displays should be available.
+2. Connect  MST+MST in daisy chain.
+3. Raven Board should be flashed and should boot to android screen.
+4. Display-Port 1.2 should be enabled in Display menu settings on monitor in both the MST displays.
+5. test-multi-displays application should be pushed into the DUT using following command:
+      $ adb connect <DUT IP address>
+      $ adb push PATH/test-multi-displays /data/app/
+6. Run the following command in host PC terminal to generate default configurations of displays(“supportedConfig.txt” file) connected:
+     $ adb shell /data/app/test-multi-displays –gtest_filter=MultiDisplayTest.GET_MultiDisplay_Configs
+7. Create a config.txt file with the specified format mentioned in Multi-display-test-application-userguide in confluence page.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open config.txt file.
+2. Modify the display_format of all displays with PIXEL_FORMAT_RGBX_8888 format.
+3. Run the following commands to push and execute the presentation mode test:
+     $ adb connect <DUT IP address>
+     $ adb push config.txt /data/app/
+     $ adb shell /data/app/test-multi-displays --gtest_filter=MultiDisplayTest.PRESENT_MultiDisplay_PresentationMode]]></actions>
+	<expectedresults><![CDATA[1. Display color format should be different in both the displays.
+2. The specified PIXEL_FORMAT_RGBX_8888 format content should be displayed in connected displays while running the test.
+3. The presentation mode testcase should be “passed” without any issues.
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8322" name="check USB type  convert  DP function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[86]]></externalid>
+	<fullexternalid><![CDATA[test123-86]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[connect and detect DP dislpay via USB type-c]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android Main menu.
+2. USB type C connection port should be existed in the board.
+3. DP display should be connected to device DP port via USB type -C convert]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[ 1.Check the behavior      ]]></actions>
+	<expectedresults><![CDATA[displays should be detected and lighted up]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7857" name="ACP" >
+<node_order><![CDATA[10]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8325" name="ACP firmare check">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[87]]></externalid>
+	<fullexternalid><![CDATA[test123-87]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[check if DUT Firmware Loading should be successful  or not ]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. Make sure ACP  application  are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${aplication _path} /system/bin/
+b) Sync and reboot the DUT to view the downloaded files.
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Module Build ACP applications under /device/amd/raven/acp folder Or else get the generated ACP applications bins . 
+ 
+2. Follow below steps to adb disable verity/remount.   
+   - adb disable-verity
+   - adb reboot
+   - adb root
+   - adb remount
+3. Push the acp application bins to /system/bin using adb push command  
+4. execute -  adb shell sync
+Note: 1-4 steps required only one time.   
+5. execute below commands
+    - su
+    - cd /system/bin
+    - acpioctl   ]]></actions>
+	<expectedresults><![CDATA[In Release build no kernel logs related to ACP module will be displayed . To check the  firmware loading status , We have to run any one of the ACP sample applications. If the firmware loading is successful,  Once ACP application is executed, then ev_get_response related logs will be captured in dmesg and application logs will be displayed on the console:
+[23126.782921] acp3x reg write cmd_offset: 0x1241870 val:0x0
+[23126.782925] acp3x reg read cmd_offset:0x1241870 val:0x0
+[23126.782950] acp3x reg write cmd_offset: 0x1241870 val:0xdddd
+[23126.782955] acp3x reg read cmd_offset:0x1241870 val:0xdddd
+[23126.782964] send_ev_command cmd_id:0x3
+[23126.782966] ev_send_cmd cmd_number:0x7 cmd_id:0x3 cmd_length:8
+[23126.782986] send_ev_command satus:0
+[23126.782987] send_ev_command Command_ID = 3 ret = 0
+[23126.782995] send_ev_command cmd_id:0x5
+[23126.782996] ev_send_cmd cmd_number:0x8 cmd_id:0x5 cmd_length:12
+[23126.783015] send_ev_command satus:0
+[23126.783016] send_ev_command Command_ID = 5 ret = 0
+[23126.783021] Device File Closed...!!!
+[23126.784101] ev_get_response read_count: 0xc
+[23126.784105] ev_process_response cmd Number:0x7, Resp Id:2
+[23126.784109] ev_record_version_info- version info 0001
+[23126.784208] ev_get_response read_count: 0xc
+[23126.784212] ev_process_response cmd Number:0x8, Resp Id:1, status:0
+[23126.784243] ev_get_response read_count: 0x0]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8328" name="check ACP function after resume">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[88]]></externalid>
+	<fullexternalid><![CDATA[test123-88]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[System level Sleep/Resume scenario]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu.
+2. Make sure ACP  application  are availble in DUT
+a) Download above supported files into DUT using adb commands.
+- adb connect <IP address>
+- adb push ${aplication _path} /system/bin/
+b) Sync and reboot the DUT to view the downloaded files.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.	Execute command - adb shell
+2.	su
+3.	cd /system/bin
+4.	Execute any acp sample application (acplogger/acpioctl)
+5.	Set the display sleep time to 30 seconds, System will enter sleep state
+6.	Press any key on keyboard, system will wake up.  
+7.	Execute adb connect <ip>
+8.	adb root
+9.	adb remount
+10.	adb shell
+11.	su
+12.	cd /system/bin
+13.	Execute any acp sample application (acplogger/acpioctl)
+Repeat steps 7 – 13 every time to test resume scenario.]]></actions>
+	<expectedresults><![CDATA[Application should be executed successfully.
+Logs will be displayed on console and dmesg logs will be captured based on the application.  We can try with different display timeout values.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7860" name="Airplane mode" >
+<node_order><![CDATA[11]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8094" name="Should support airplane function">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[10]]></externalid>
+	<fullexternalid><![CDATA[test123-10]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Verify whether system is able to enable and disable Airplane mode or not.]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android main menu
+2. Connected router should have Internet.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Goto settings --> Network & internet --> Advanced --> Airplane 
+Check whether system is able to enable the Airplane option or not. And alsoCheck whether able to disable the Airplane option or not.]]></actions>
+	<expectedresults><![CDATA[1. Should be able to enable/disable the Airplane option.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7861" name="USB" >
+<node_order><![CDATA[12]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8331" name="Usb device should support and work">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[89]]></externalid>
+	<fullexternalid><![CDATA[test123-89]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the USB Keyboard Functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. USB Keyboard should be available and connected to DUT
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Open search application and enter all the keys,check the functionality.]]></actions>
+	<expectedresults><![CDATA[1. All keys in the Keyboard should work properly without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8334" name="Usb device should support and work">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[90]]></externalid>
+	<fullexternalid><![CDATA[test123-90]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the USB Mouse Functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. USB Mouse should be available and connected to DUT]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Check able to open applications using Use mouse.]]></actions>
+	<expectedresults><![CDATA[1. Should be able to open applications using mouse click events.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8337" name="Usb storage should support and can aceess properly">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[91]]></externalid>
+	<fullexternalid><![CDATA[test123-91]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check the USB Storage device Functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen
+2. USB Storage device should be available and connected to DUT
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Check whether the data of USB is accessible or not]]></actions>
+	<expectedresults><![CDATA[1. USB Storage should detect in USB host port and also device display screen should not rotate when the USB 2.0 devices connected to host port.USb storage device data should display properly without any issues.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7862" name="Storage" >
+<node_order><![CDATA[13]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8529" name="Internal storage should support read/write">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[155]]></externalid>
+	<fullexternalid><![CDATA[test123-155]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check able to push the files into internal memory]]></summary>
+	<preconditions><![CDATA[1. Ethernet cable should be available and it has Internet connection.
+2. Boot the DUT completely to its unlock screen.
+3. Connect Ethernet Cable to the Raven Board Ethernet port.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to device through adb over Ethernet from the PC  using the command:
+ “adb connect <DUT IP Address>”.
+“adb push <file path in PC>  /sdcard/”.]]></actions>
+	<expectedresults><![CDATA[1. Selected file form PC should be pushed to device internal memory after enter the command “adb push <file path in PC> /sdcard/”  In the PC terminal.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8532" name="Internal storage should support read/write">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[156]]></externalid>
+	<fullexternalid><![CDATA[test123-156]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check able to pull the files from internal memory]]></summary>
+	<preconditions><![CDATA[1. Ethernet cable should be available and it has Internet connection.
+2. Boot the DUT completely to its unlock screen.
+3. Connect Ethernet Cable to the Raven Board Ethernet port.
+4. Make sure few files are available in DUT]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to device through adb over Ethernet from the PC  using the command: 
+“adb connect <DUT IP Address>”.
+“adb pull  ${filepath}"
+]]></actions>
+	<expectedresults><![CDATA[1. Specified file form the device internal memory should be pulled to PC after enter the command  “adb pull  /sdcard/<filename in the device internal memory” In the PC terminal.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8535" name="Internal storage should support read/write">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[157]]></externalid>
+	<fullexternalid><![CDATA[test123-157]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check able to install  APKs in internal memory]]></summary>
+	<preconditions><![CDATA[1. Ethernet cable should be available and it has Internet connection.
+2. Boot the DUT completely to its unlock screen.
+3. Connect Ethernet Cable to the Raven Board Ethernet port.
+4. Antutu benchmark should be available.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Connect to device through adb over Ethernet from the PC  using the command: 
+“adb connect <DUT IP Address>”.
+adb install <Antutu benchmark apk path in the PC>/”.]]></actions>
+	<expectedresults><![CDATA[1. The Antutu benchmark should be installed in the device internal memory after enter the command “adb install <Antutu benchmark apk path in the PC>/”  In the PC terminal.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8538" name="internal storage should support read/write">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[158]]></externalid>
+	<fullexternalid><![CDATA[test123-158]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check able to uninstall the third party APKs from the device internal memory.]]></summary>
+	<preconditions><![CDATA[1. Build should support Ethernet.
+2. Ethernet cable should be available and it has Internet connection.
+3. Boot the DUT completely to its unlock screen.
+4. Connect Ethernet Cable to the Raven Board Ethernet port.
+5. Antutu benchmark should be available.
+ “adb connect <DUT IP Address>”.
+“adb install <Antutu benchmark apk path in the PC>/”.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Long press on Antutu benchmark APK, click on “Uninstall” button on Unstall dialog andCheck whether Antutu benchmark is unstalled from the device internal memory.]]></actions>
+	<expectedresults><![CDATA[1. The Antutu benchmark should be uninstalled from the device internal memory after click on “Uninstall” button on the unstall dialog.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7863" name="Browser" >
+<node_order><![CDATA[14]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8355" name="Browser function should work">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[97]]></externalid>
+	<fullexternalid><![CDATA[test123-97]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check able to browsing with  url or not]]></summary>
+	<preconditions><![CDATA[1. DUT should boot up to Android screen
+2. The  DUT should have the internet facility (Wi-Fi /  Ethernet).
+3. WiFi/BT chip with Antennas should be present in the DUT.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1.Open the Browser Apk, Browse “www.msn.com” URL andCheck the behavior]]></actions>
+	<expectedresults><![CDATA[The DUT should be able to browse web sites using URL's and able to access the “www.msn.com” website.]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7864" name="IO" >
+<node_order><![CDATA[15]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8358" name="Android UI button should work properly">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[98]]></externalid>
+	<fullexternalid><![CDATA[test123-98]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check Back button functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open any application and select back button]]></actions>
+	<expectedresults><![CDATA[DUT should display/navigate to the previous screen upon clicking on back button]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8361" name="Android UI button should work properly">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[99]]></externalid>
+	<fullexternalid><![CDATA[test123-99]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check Home button functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open any application and Press Home button]]></actions>
+	<expectedresults><![CDATA[DUT should navigate/display the home screen]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8364" name="Android UI button should work properly">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[100]]></externalid>
+	<fullexternalid><![CDATA[test123-100]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check Recent items button functionality]]></summary>
+	<preconditions><![CDATA[1. Boot the DUT up to Android unlock screen]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Open multiple applications and Click on Recent apps button]]></actions>
+	<expectedresults><![CDATA[DUT should display all the recently opened applications]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite><testsuite id="7865" name="memory leak" >
+<node_order><![CDATA[16]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="8367" name="should not occur memory leak during benchmark">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[101]]></externalid>
+	<fullexternalid><![CDATA[test123-101]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether Kmemleak is observed or not while running GFX 5.0 benchmarks OpenGL tests]]></summary>
+	<preconditions><![CDATA[1. DUT should be flashed and should boot to android screen
+2. Collect the dmesg logs via "adb shell dmesg" in terminal or via dmesg command in cutecom tool
+3. Make sure previously existing dmesg logs should be cleared using command "adb shell dmesg -c" or "dmesg -c" in cutecom
+4. GFX 5.0 benchmark should be installed to the device.]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Reboot the device
+2. After rebooting the device, open GFX 5.0 benchmark,select High level OpenGL tests and run them.
+3. After completion of the benchmark, enter dmesg in input option of cutecom tool or enter "adb shell dmesg" in terminal
+4. Observe the logs if any error "new suspected memory leaks" comes in dmesg logs.]]></actions>
+	<expectedresults><![CDATA[No "new suspected memory leaks" error should be observed in dmesg logs while running GFX 5.0 benchmarks OpenGL tests]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8370" name="should not occur memory leak during video playing">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[102]]></externalid>
+	<fullexternalid><![CDATA[test123-102]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check whether Kmemleak is observed or not while running video tests]]></summary>
+	<preconditions><![CDATA[1. DUT should be flashed and should boot to android screen
+2. Collect the dmesg logs via "adb shell dmesg" in terminal or via dmesg command in cutecom tool
+3. Make sure previously existing dmesg logs should be cleared using command "adb shell dmesg -c" or "dmesg -c" in cutecom
+4. Below mentioned Video Codecs should be pushed to the device and default Gallery application should be present in device.
+   H264 video codec with 3gp container and different resolutions 4k, 1080p, 720p, VGA, QVGA
+   H264 video codec with mp4 container and different resolutions 4k, 1080p, 720p, VGA, QVGA
+   H265 video codec with mp4 container and different resolutions 4k, 1080p, 720p, VGA, QVGA
+   VP9 video codecs with webm container and different resolutions 4k, 1080p, 720p, VGA, QVGA]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Reboot the device
+2. After rebooting the device, play all the video codecs with different resolutions in Gallery of the device and perform seek operation while playing the videos.
+3. Enter dmesg in input option of cutecome tool or enter "adb shell dmesg" in terminal 
+4. Observe the logs if any error "new suspected memory leaks" comes in dmesg logs]]></actions>
+	<expectedresults><![CDATA[No "new suspected memory leaks" error should be observed in dmesg logs while running video codecs tests]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+
+<testcase internalid="8373" name="should not occur memory leak during APP stress running">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[103]]></externalid>
+	<fullexternalid><![CDATA[test123-103]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[Check Kmemleak is observed or not while stressing camera application]]></summary>
+	<preconditions><![CDATA[1. DUT should be flashed and should boot to android screen
+2. Collect the dmesg logs via "adb shell dmesg" in terminal or via dmesg command in cutecom tool
+3. Make sure previously existing dmesg logs should be cleared using command "adb shell dmesg -c" or "dmesg -c" in cutecom
+4.Camera application should be functional in the device]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[1. Reboot the device
+2. After rebooting the device, open Camera application and perform various below mentioned operations for 20 times- 
+   Image capturing
+   Video recording
+   Image preview
+   Image capturing with timer 3s/10s
+   Changing resolutions and capturing image and video recording
+3. After completion of stress testing on camera, enter dmesg in input option of cutecom or enter "adb shell dmesg" in terminal
+4. Observe the logs if any error "new suspected memory leaks" comes in dmesg logs]]></actions>
+	<expectedresults><![CDATA[No "new suspected memory leaks" error should be observed in dmesg logs while stressing camera application]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testsuite></testsuite>

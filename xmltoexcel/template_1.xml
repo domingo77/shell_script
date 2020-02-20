@@ -1,0 +1,4881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite id="5088" name="Multimedia" >
+<node_order><![CDATA[7]]></node_order>
+<details><![CDATA[<p>
+	Create test suite for Multimedia module</p>
+]]></details> 
+<testsuite id="5089" name="Audio" >
+<node_order><![CDATA[1]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="5090" name="Multimedia:Check Audeo decode functionality of .mp3 format">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[53]]></externalid>
+	<fullexternalid><![CDATA[test-53]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<div>
+	Verify whether the DUT is supporting the Playback of MP3(.mp3) Audio format with the following constant and variable bit rates:</div>
+<div>
+	a) Mono 8 Kbps, 128kbps and&nbsp; 320kbps CBR(constant bit rates)&nbsp;</div>
+<div>
+	b) Stereo 8 Kbps,128kbps and 320kbps CBR(constant bit rates)&nbsp;</div>
+<div>
+	c) Mono and stereo VBR(variable bit rate)</div>
+<div>
+	&nbsp;</div>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. Boot DUT up to Android Main menu.</div>
+<div>
+	2. Should be available the following MP3(.mp3) audio codec format files</div>
+<div>
+	&nbsp;a) Mono 8 Kbps,&nbsp; 128kbps and 320kbps CBR(constant bit rates)&nbsp;</div>
+<div>
+	&nbsp;b) Stereo 8 Kbps,&nbsp; 128kbps and&nbsp; 320kbps CBR(constant bit rates)&nbsp;</div>
+<div>
+	c) Mono and stereo VBR(variable bit rate)</div>
+<div>
+	&nbsp;</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the MP3(.mp3) Audio decode format files with the CBR of Mono 8 Kbps, 128kbps and 320kbps into the device.</div>
+<div>
+	2. Open the Music Apk.</div>
+<div>
+	3. Select and Playback the above copied mono channel with various bit rate files from the device and Check whether DUT is playing mono files without any issues or not.</div>
+<div>
+	4. Copy the MP3(.mp3) Audio decode format file with the CBR of Stereo 8 Kbps, 128kbps and 320kbps into the device.</div>
+<div>
+	5. Open the Music Apk.&nbsp;</div>
+<div>
+	6. Select and playback the above copied Stereo channel with various bit rate files from the device and Check whether the DUT&nbsp; is playing stereo files without any issues or not.</div>
+<div>
+	7. Copy the downloaded MP3(.mp3) Audio decode format files with the VBR of Mono and stereo into the device.</div>
+<div>
+	8. Open the Music Apk.</div>
+<div>
+	9. Select and Playback the above copied mono and stereo channel VBR files from the device and Check whether DUT is playing mono and stereo files without any issues or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<div>
+	1.The DUT should support the Playback of MP3(.mp3) Audio format with the CBR of Mono 8kbps, 128kbps and 320Kbps files without any issues.</div>
+<div>
+	2.The DUT should support the Playback of MP3(.mp3) Audio format with the CBR of Stereo 8kbps, 128kbps and 320Kbps files without any issues.</div>
+<div>
+	3.The DUT should support the Playback of MP3(.mp3) Audio format with the VBR of Mono &amp; Stereo files without any issues.</div>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_mp3_diff_channels.TestAudioMp3Regression]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5093" name="Multimedia:Check Audio decode functionality of .wav format">
+	<node_order><![CDATA[1009]]></node_order>
+	<externalid><![CDATA[54]]></externalid>
+	<fullexternalid><![CDATA[test-54]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<div>
+	Check the DUT is supporting the playback of WAVE(.wav) Audio format with the following sample rates or not.</div>
+<div>
+	a).8-bit linear PCM with sampling rate 8000HZ.</div>
+<div>
+	b).8-bit linear PCM with sampling rate 16000HZ.</div>
+<div>
+	c).8-bit linear PCM with sampling rate 44100HZ.</div>
+<div>
+	d).8-bit linear PCM with sampling rate 48000HZ.</div>
+<div>
+	e).16-bit linear PCM with sampling rate 8000HZ</div>
+<div>
+	f).16-bit linear PCM with sampling rate 16000HZ.</div>
+<div>
+	g).16-bit linear PCM with sampling rate 44100HZ.</div>
+<div>
+	h).16-bit linear PCM with sampling rate 48000HZ.</div>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. DUT should boot up to Android Main menu.</div>
+<div>
+	2. Should be available the 8-bit PCM with sampling rates of 8KHZ, 16KHZ,44.1KHZ and 48KHZ PCM/WAVE audio codec files for testing.</div>
+<div>
+	3.Should have the 16-bit PCM with sampling rates of 8KHZ, 16KHZ,44.1KHZ and 48KHZ PCM/WAVE audio codec files ready.</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the 8-bit linear PCM with Sampling rates of 8000 Hz, 16000 Hz, 44100 Hz and 48000 Hz WAVE(.wav) Audio decode format files into the device.&nbsp;&nbsp;</div>
+<div>
+	2. Open the Music Apk.</div>
+<div>
+	3. Select and Playback the above copied files from the device and Check whether DUT is playing without any issues or not.</div>
+<div>
+	4. Copy the 16-bit linear PCM with Sampling rates of 8000 Hz, 16000 Hz, 44100 Hz and 48000 Hz WAVE(.wav) Audio decode format files into the device.</div>
+<div>
+	5. Open the Music Apk.</div>
+<div>
+	6. Playback the above copied files from the device and Check whether DUT is playing without any issues or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<div>
+	<div>
+		1. The DUT should support the Playback of 8-bit linear PCM with Sampling rates at 8000 Hz, 16000 Hz, 44100 Hz and 48000 Hz WAVE(.wav) Audio decode format files without any issues.</div>
+	<div>
+		2. The DUT should support the Playback of 16-bit linear PCM with Sampling rates at 8000 Hz, 16000 Hz, 44100 Hz and 48000 Hz WAVE(.wav) Audio decode format files without any issues.</div>
+</div>
+<p>
+	&nbsp;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_wav_diff_sample_rates.TestAudioWavRegression]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5096" name="Multimedia:Check playback of  Audio streaming">
+	<node_order><![CDATA[1025]]></node_order>
+	<externalid><![CDATA[121]]></externalid>
+	<fullexternalid><![CDATA[test-121]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the playback of&nbsp; Audio streaming or not</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. DUT should have the internet facility (Wi-Fi /Ethernet)</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the Browser Apk,<br />
+	2. Open the &ldquo;https://gaana.com/&rdquo; URL.<br />
+	3. Play any Audio.<br />
+	4. Check whether the Audio is playing without any issues or not</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	The DUT&nbsp; should be able to play streaming Audio with out any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_streaming.TestAudio_streaming]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5099" name="Multimedia:Check Audio Play and Stop functionality">
+	<node_order><![CDATA[1028]]></node_order>
+	<externalid><![CDATA[124]]></externalid>
+	<fullexternalid><![CDATA[test-124]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify Audio file Stop/Play functionality</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1.DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app<br />
+	2. Play any audio file<br />
+	3. Stop the file while Playback.<br />
+	4. Play the file after stopping it.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Audio Should be heard without any distortions or corruptions.<br />
+	2. The file should be Stop when pressing on Stop button<br />
+	3. while playing the Audio and The file should be played after unstopped.<br />
+	4. The file should be played from the specified position where it is Stopped.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5102" name="Multimedia:Check Audio Progress bar functionality">
+	<node_order><![CDATA[1029]]></node_order>
+	<externalid><![CDATA[125]]></externalid>
+	<fullexternalid><![CDATA[test-125]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify Audio Progress bar functionality</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1.DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Launch Music app, and Play any audio file<br />
+	2. Check whether the sound is clear without any distortions or corruptions<br />
+	3. Try to playback the audio from specific position.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1.&nbsp; The audio should be heard without any distortions or corruptions<br />
+	2. Should be able to playback the audio from specified position.<br />
+	3. Progress bar movement is in sync with the time.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_progressbar.TestAudioProgressbarFunction]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5105" name="Multimedia:Check Audio recording functionality">
+	<node_order><![CDATA[1032]]></node_order>
+	<externalid><![CDATA[128]]></externalid>
+	<fullexternalid><![CDATA[test-128]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify Audio Encoding functionality</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1.DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Sound Recorder app and start for recording.<br />
+	2.Stop recording and save the recorded file into device.<br />
+	3. Now play the Recorded Audio file and check recorded audio file is playing fine or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Should be able to record the audio and the recorded Audio should not have any distortions.<br />
+	2. Recording should stop without any problem and file should save into device.<br />
+	3. Should be able to playback the recorded audio and playback audio time is same as while recording, Recorded file is equal to the sound while recording</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5108" name="Audio:Check Audio play and pause functionality">
+	<node_order><![CDATA[1033]]></node_order>
+	<externalid><![CDATA[230]]></externalid>
+	<fullexternalid><![CDATA[test-230]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the audio play and pause functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the supported different audio streams to DUT.<br />
+	2. Open Music app, playback any audio file.<br />
+	3. Now try to pause the audio playback.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. DUT should be able to playback the stream without any issues.<br />
+	2. Audio Should be heard without any distortions or corruptions and noise added<br />
+	3. Audio file should be paused when pause button is pressed and it should be resumed after play again where it paused.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_play_pause.TestAudioPlayPause]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5111" name="Audio:Check Audio suspend and resume functionality">
+	<node_order><![CDATA[1034]]></node_order>
+	<externalid><![CDATA[231]]></externalid>
+	<fullexternalid><![CDATA[test-231]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the audio suspend and resume functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the supported different audio streams to DUT.<br />
+	2. Open Music app, playback any audio file.<br />
+	3. Now try to suspend&nbsp; the audio playback by setting sleep sound for some time.<br />
+	4. After DUT went into sleep mode try to invoke the DUT by using any key in keyboard or mouse.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. DUT should be able to playback the stream without any issues.<br />
+	2. Audio Should be heard without any distortions or corruptions and noise added<br />
+	3. Audio file should be&nbsp; continued to play even when we suspend or resume.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5114" name="Audio:Check Audio next and previous functionality">
+	<node_order><![CDATA[1035]]></node_order>
+	<externalid><![CDATA[232]]></externalid>
+	<fullexternalid><![CDATA[test-232]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio next and previous functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the music app.<br />
+	2. Playback any audio file.<br />
+	3. Click on next button.<br />
+	4. Click on previous button.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heard without any distortions or corruptions.<br />
+	2. While we press the next button it should play the next song immediately.<br />
+	3. when&nbsp; we press the previous button it should&nbsp; play the previous song without any delay.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_next_previous.TestAudioNextandPreviousFunction]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5117" name="Audio:Check Audio details functionality">
+	<node_order><![CDATA[1036]]></node_order>
+	<externalid><![CDATA[233]]></externalid>
+	<fullexternalid><![CDATA[test-233]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the audio details functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the music app.<br />
+	2. Playback any audio file.<br />
+	3. Go to menu and click on details option.&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. It should display the complete details such as storage,codec etc., without any issue.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5120" name="Audio:Check Audio shuffle functionality">
+	<node_order><![CDATA[1037]]></node_order>
+	<externalid><![CDATA[234]]></externalid>
+	<fullexternalid><![CDATA[test-234]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the audio shuffle functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the music app.<br />
+	2. Set the shuffle mode in DUT.<br />
+	3. Play any audio file.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. After the completion of current song it should not play the just next song.<br />
+	2. It should play the song which is far next song from the previous one.<br />
+	3. When we press the next or previous option it should play the other song than the just next or just previous songs.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_shuffle.TestAudioShuffleFunction]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5123" name="Audio:Check Audio repeat functionality">
+	<node_order><![CDATA[1038]]></node_order>
+	<externalid><![CDATA[235]]></externalid>
+	<fullexternalid><![CDATA[test-235]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the audio repeat(Repeat current song,Repeat all songs)functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the music app.<br />
+	2. Set repeat current song option.<br />
+	3. Play any audio file.<br />
+	4. Now,set repeat all songs option.<br />
+	5. Play any audio file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When we set the repeat current song it will repeat that song until we play another song or reset that option.<br />
+	2. When we set repeat all songs option,first it will play all the songs in the respective folder.<br />
+	3. After that it will repeat all the songs in that respective folder.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_repeat.TestAudioRepeatFunction]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5126" name="Audio:Check Audio volume functionality">
+	<node_order><![CDATA[1039]]></node_order>
+	<externalid><![CDATA[236]]></externalid>
+	<fullexternalid><![CDATA[test-236]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio volume(Up/Down) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app.<br />
+	2. Play any audio file.<br />
+	3. Vary the volume by&nbsp; go to -&gt;settings-&gt;sound-&gt;Media volume-&gt;by increasing and decreasing.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. While increasing or decreasing the volume the song should be played&nbsp; according to the volume without any distortions.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_volume_up_and_down.TestVolume_Up_Down]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5129" name="Audio:Check device playing large audio files functionality">
+	<node_order><![CDATA[1040]]></node_order>
+	<externalid><![CDATA[237]]></externalid>
+	<fullexternalid><![CDATA[test-237]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check&nbsp; the DUT is able to play&nbsp; the large audio files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .<br />
+	3. The DUT should support playback of large audio files also.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy large duration&nbsp; audio files to DUT.<br />
+	2. Open music app.<br />
+	3. Play the large audio files.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The large audio file should be played without any distortions or corruptions.<br />
+	2. The file should be played upto its duration.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5132" name="Audio:Check Audio playing through USB functionality">
+	<node_order><![CDATA[1041]]></node_order>
+	<externalid><![CDATA[238]]></externalid>
+	<fullexternalid><![CDATA[test-238]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio playing through USB&nbsp; functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy some files into USB.<br />
+	2. Connect the USB to the DUT.<br />
+	3. Play any audio file which is in USB only.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should detect USB without any issues.<br />
+	2. The file should be played and it should be audible without any glitches and other disturbances.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_play_from_usb_storage.TestAudioPlayFromUsbStorage]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5135" name="Audio:Check Audio to display error message functionality">
+	<node_order><![CDATA[1042]]></node_order>
+	<externalid><![CDATA[239]]></externalid>
+	<fullexternalid><![CDATA[test-239]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; to display an error message while playing the corrupted files/invalid formats or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app.<br />
+	2. Copy some corrupted and invalid files into DUT.<br />
+	3. Play above copied corrupted file and invalid files.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When we try to play a corrpted file it should show an error message that &ldquo;can&#39;t play the file&rdquo;.<br />
+	2. When we are trying to play an invalid file it should show an error message &ldquo;file format unsupported&rdquo;.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_corrupted_file.TestAudioCorruptedFile]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5138" name="Audio:Check Audio playing through USB headset functionality">
+	<node_order><![CDATA[1044]]></node_order>
+	<externalid><![CDATA[241]]></externalid>
+	<fullexternalid><![CDATA[test-241]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio playing through USB headset(plugin/plugout) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the USB headset to the target device and check whether USB headset is detected or not.<br />
+	2. Open&nbsp; music player app and play any audio file.<br />
+	3. After some time&nbsp; Plug-out the headset.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Target device&nbsp; should&nbsp; detect the connected USB headset when plugged-in.<br />
+	2. The file should be heared through USB headset without any glitches.<br />
+	3. when we plugout the headset the audio should be stopped.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5141" name="Audio:Check Audio playing through audio jack functionality">
+	<node_order><![CDATA[1045]]></node_order>
+	<externalid><![CDATA[242]]></externalid>
+	<fullexternalid><![CDATA[test-242]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio playing through Audio jack(plugin/plugout) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the&nbsp; headset to the target device and check whether&nbsp; headset is detected or not.<br />
+	2. Open&nbsp; music player app and play any audio file.<br />
+	3. After some time&nbsp; Plug-out the headset.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Target device&nbsp; should&nbsp; detect the connected&nbsp; headset when plugged-in.<br />
+	2. The file should be heared through headset without any glitches.<br />
+	3. When we plugout the headset the audio should be stopped playing through headset.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5144" name="Audio:Check Audio playing through BT headset functionality">
+	<node_order><![CDATA[1046]]></node_order>
+	<externalid><![CDATA[243]]></externalid>
+	<fullexternalid><![CDATA[test-243]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio playing through BT headset(plugin/plugout) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Turn on the bluetooth.<br />
+	2. Pair the bluetooth headset with DUT.<br />
+	3. Open music app and play any audio file.<br />
+	4. Disconnect the bluetooth with DUT.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. DUT&nbsp; should pair with&nbsp; bluetooth headset without any issues.<br />
+	2. Audio played should be audible through bluetooth headset.<br />
+	3. When bluetooth headset is disconnected from the DUT the audio will be continued to play through speakers.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5147" name="Audio:Check Audio playing using speakers">
+	<node_order><![CDATA[1047]]></node_order>
+	<externalid><![CDATA[244]]></externalid>
+	<fullexternalid><![CDATA[test-244]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; Audio Out through Speakers</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect Audio Out to wired headset.<br />
+	2. Copy supported audio files into device.<br />
+	3. Open &quot;Music&quot; app.<br />
+	4. Play the music files - check audio on Wired headset.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be audible througgh the speakers without any glitches and disturbances.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5150" name="Audio:Check Audio extension changing functionality">
+	<node_order><![CDATA[1048]]></node_order>
+	<externalid><![CDATA[245]]></externalid>
+	<fullexternalid><![CDATA[test-245]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check&nbsp; the DUT is supporting to change file extensions/names such as MP3 to AMR or vice versa or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.<br />
+	3. DUT should contain file manager APK.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open File manager app.<br />
+	2. Right click on any one of the audio file.<br />
+	3. Click on rename option.<br />
+	4. Change the extension of file as you want.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The extension/name of the file should change successfully.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5153" name="Audio:Check Audio playback of pushed file">
+	<node_order><![CDATA[1049]]></node_order>
+	<externalid><![CDATA[246]]></externalid>
+	<fullexternalid><![CDATA[test-246]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play the audio file which is pushed into DUT through adb push command</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.<br />
+	3. The DUT should have ethernet connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	2. Enter the &ldquo;adb push source path Destination path&rdquo; command in PC terminal.<br />
+	3. Check whether file is copying into the DUT or not.<br />
+	4. Open Music app.<br />
+	5. Then, search the pushed file.<br />
+	6. Play the file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio file&nbsp; which has pushed into the DUT should play without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_push_play.TestAudioPush_Play]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5156" name="Audio:Check Audio playing after USB plugged out">
+	<node_order><![CDATA[1050]]></node_order>
+	<externalid><![CDATA[247]]></externalid>
+	<fullexternalid><![CDATA[test-247]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play the audio file through USB even after it is plugged out</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the USB to the DUT.<br />
+	2. Go to Files.<br />
+	3. Play any audio file.<br />
+	4. After sometime plugout the USB.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should detect the USB successfully.<br />
+	2. The file should be heared clearly without any issues.<br />
+	3. While we plug out the USB the file should stop playing showing message can&#39;t play the audio.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5159" name="Audio-Str:Check the Audio playbck for 25 times">
+	<node_order><![CDATA[1051]]></node_order>
+	<externalid><![CDATA[248]]></externalid>
+	<fullexternalid><![CDATA[test-248]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting playing and recording 25 audio records continuously&nbsp; or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Sound Recorder app and start for recording.<br />
+	2. Stop recording and save the recorded file into device.<br />
+	3. Try to record 25 audio clips.<br />
+	4. Now play the Recorded Audio files and check recorded audio files are&nbsp; playing fine or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Should be able to record all the audio files&nbsp; and the recorded Audios&nbsp; should not have any distortions.<br />
+	2. Recording should stop without any problem and files should save into device.<br />
+	3. Should be able to playback the recorded audios and playback audio time is same as while recording, Recorded files must synchronize&nbsp; to the sound while recording</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5162" name="Audio-Str:Check Audio playing of 100 files">
+	<node_order><![CDATA[1052]]></node_order>
+	<externalid><![CDATA[249]]></externalid>
+	<fullexternalid><![CDATA[test-249]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio playing 100 songs continuously or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy 100 audio files into DUT.<br />
+	2. Open Music app.<br />
+	3. Playback any one of the audio file .</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. All the copied 100 songs should play one after another without any issues.<br />
+	2. The files should be Stop when pressing on Stop button only.<br />
+	3. As long as we didnot stop the songs it should play songs continuously without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5165" name="Audio-Str:Check plugin and plugout of any headset 25 times">
+	<node_order><![CDATA[1053]]></node_order>
+	<externalid><![CDATA[250]]></externalid>
+	<fullexternalid><![CDATA[test-250]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; Plug-in and Plug-out any one of(BT,USB,Audio jack)&nbsp; headset for 25 times functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the Audio jack to the DUT.<br />
+	2. Open music app and play an audio file.<br />
+	3. Now,remove the audio jack and connect the USB headset.<br />
+	4. After some time, turn on the bluetooth.<br />
+	5. Pair the DUT with BT headset and then remove USB headset.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. DUT&nbsp; should be able to detect the connected headset whether it is Audio jack or BT headset or USB headset.<br />
+	2. While switching from one type of headset to another for ex:while listening through audio jack the audio file should be heared without any disturbances, while we remove audio headset the audio file should not stop playing and immediately after connecting USB headset the audio file should continue to play, while pairing the DUT with BT headset it should be paired without any issues and while we remove USB headset we should not be able to listen the audio,we should select bluetooth headset to listen the audio file then only the we will hear the audio.<br />
+	3. Even though we repeat this procedure the audio file should be played as described above without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5168" name="Audio-Str:Check Audio playing of 25 invalid files">
+	<node_order><![CDATA[1054]]></node_order>
+	<externalid><![CDATA[251]]></externalid>
+	<fullexternalid><![CDATA[test-251]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play 25 invalid or corrupted files continuously</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app.<br />
+	2. Copy 25 corrupted and 25 invalid files into DUT.<br />
+	3. Play above copied corrupted files and invalid files.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When we try to play a corrupted file it should show an error message that &ldquo;can&#39;t play the file&rdquo;.<br />
+	2. When we are trying to play an invalid file it should show an error message &ldquo;file format unsupported&rdquo;.<br />
+	3. As long as we play any number of files,for ex:25 files the DUT should show the same message every time without any clashes.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5171" name="Audio-Conc:Check Audio play while browsing">
+	<node_order><![CDATA[1055]]></node_order>
+	<externalid><![CDATA[252]]></externalid>
+	<fullexternalid><![CDATA[test-252]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the browsing while playing an audio file.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot upto android main menu.<br />
+	2. The DUT should support playback of audio file.<br />
+	3. The DUT should have WiFi or Ethernet connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy audio files into device.<br />
+	2. Open music app and play any audio file.<br />
+	3. Open the browser and search for anything like www.google.com.&nbsp;&nbsp;&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heard without any distortions or corruptions even though browsing is going on.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_browsing_audio_play.TestBrowsingWhilePlayingAudio]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5174" name="Audio-Conc:Check Audio play while playing video">
+	<node_order><![CDATA[1056]]></node_order>
+	<externalid><![CDATA[253]]></externalid>
+	<fullexternalid><![CDATA[test-253]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; to play video while playing an audio file.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot upto android main menu.<br />
+	2. The DUT should support playback of audio file and it should contain Mxplayer Apk.<br />
+	3. The DUT should have WiFi or Ethernet connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy audio and video files into device.<br />
+	2. Open music app and play any audio file.<br />
+	3. Open Mxplayer and try to play video.&nbsp;&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be stop playing while playing video.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_audio_play.TestAudioplayDuringVideoplay]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5177" name="Audio-Conc:Check Audio play during Airplanemode(ON/OFF)">
+	<node_order><![CDATA[1057]]></node_order>
+	<externalid><![CDATA[254]]></externalid>
+	<fullexternalid><![CDATA[test-254]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio while airplane mode in(ON/OFF) conditions or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy audio files into device.<br />
+	2. Open music app and play any audio file.<br />
+	3. Turn on the airplane mode.<br />
+	4. After sometime turn off the airplane mode.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heard without any distortions or corruptions even though turn on/off the airplane mode.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_airplane_mode.TestAudioPlayDuringAirplaneMode]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5180" name="Audio-Conc:Check Audio play during BT(ON/OFF)">
+	<node_order><![CDATA[1058]]></node_order>
+	<externalid><![CDATA[255]]></externalid>
+	<fullexternalid><![CDATA[test-255]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio while bluetooth in(ON/OFF) conditions or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy audio files into device.<br />
+	2. Open music app and play any audio file.<br />
+	3. Turn on the bluetooth.<br />
+	4. After sometime turn off the bluetooth.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heard without any distortions or corruptions even though turn on/off the bluetooth&nbsp; without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5183" name="Audio-Conc:Check Audio playing through USB storage">
+	<node_order><![CDATA[1059]]></node_order>
+	<externalid><![CDATA[256]]></externalid>
+	<fullexternalid><![CDATA[test-256]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio playing through USB storage&nbsp; functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy some files into USB storage.<br />
+	2. Connect the USB storage to the DUT.<br />
+	3. Play any audio file which is in USB storage.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should detect USB storage without any issues.<br />
+	2. The file should be played and it should be audible without any glitches and other disturbances.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5186" name="Audio-Conc:Check Audio play during other apps usage">
+	<node_order><![CDATA[1060]]></node_order>
+	<externalid><![CDATA[257]]></externalid>
+	<fullexternalid><![CDATA[test-257]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the audio playback with other apps interruptions or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app.<br />
+	2. Play any audio file.<br />
+	3. Open all other apps concurrently&nbsp; with musis player app.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When we play music with all apps except with video player the audio should be heared without any clutches or disturbances.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5189" name="Audio-Conc:Check Audio play during image slideshow">
+	<node_order><![CDATA[1061]]></node_order>
+	<externalid><![CDATA[258]]></externalid>
+	<fullexternalid><![CDATA[test-258]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting image slideshow while palying an MP3 file</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.<br />
+	3. The DUT should support Gallery apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app.<br />
+	2. Play any audio file.<br />
+	3. Go to gallery APK.<br />
+	4. View any image.<br />
+	5. Go to Menu-&gt;slideshow.<br />
+	6. Click on slideshow option.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heared clearly without any disturbances.<br />
+	2. When we click on slideshow option, the images in that respective folder should come one after one without any blur.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5192" name="Audio-Conc:Check Audio play during alarm time">
+	<node_order><![CDATA[1062]]></node_order>
+	<externalid><![CDATA[259]]></externalid>
+	<fullexternalid><![CDATA[test-259]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting alarm while playing MP3 file</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.<br />
+	3. The DUT should support&nbsp; alarm Apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Go to alarm.<br />
+	2. Set alam after 30 seconds.<br />
+	3. Go to Music app.<br />
+	4. Play any audio file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The alarm should set successfully without any issues.<br />
+	2. The song should be heared without any glitches.<br />
+	3. After 30 seconds the audio should be paused.<br />
+	4. The alarm should start.<br />
+	5. After the alarm completes ranging the audio should be again heared clearly.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5195" name="Audio-Conc:Check Audio play while running some other APK's">
+	<node_order><![CDATA[1063]]></node_order>
+	<externalid><![CDATA[260]]></externalid>
+	<fullexternalid><![CDATA[test-260]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting image slideshow while downloading through wifi,playing an MP3 file and pushing a file using adb push command</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.<br />
+	3. The DUT should support Gallery apk.<br />
+	4. The DUT should have Ethernet and WiFi connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app.<br />
+	2. Play an audio file.<br />
+	3. Go to browser and type Mp3 song download in search menu.<br />
+	4. Click on any one of available links.<br />
+	5. Click on any one of MP3 file you want to download.<br />
+	6. Then click on download option showing there.<br />
+	7. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	8. Enter the &ldquo;adb push source path Destination path&rdquo;.<br />
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heared clearly without any glitches.<br />
+	2. Search results should be displayed without buffering.<br />
+	3. Download of file should be continued in the background.<br />
+	4. The file which we are pushing should be available in the destination folder without any loss of data.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5198" name="Audio-Conc:Check Audio play through BT while running some other APK's">
+	<node_order><![CDATA[1064]]></node_order>
+	<externalid><![CDATA[261]]></externalid>
+	<fullexternalid><![CDATA[test-261]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting image slideshow while downloading through wifi,playing an MP3 file through BT headset and pushin a file using adb push command</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.<br />
+	3. The DUT should support Gallery apk.<br />
+	4. The DUT should have Ethernet and WiFi connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Go to settings-&gt;bluetooth.<br />
+	2. Enable the bluetooth.<br />
+	3. Pair the DUT with available bluetooth headset.<br />
+	4. Open Music app.<br />
+	5. Play an audio file.<br />
+	6. Go to browser and type Mp3 song download in search menu.<br />
+	7. Click on any one of available links.<br />
+	8. Click on any one of MP3 file you want to download.<br />
+	9. Then click on download option showing there.<br />
+	10. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	11. Enter the &ldquo;adb push source path Destination path&rdquo;.<br />
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The bluetooth headset should be paired with DUT without any issues.<br />
+	2. The audio should be heared clearly in the bluetooth headset without any glitches.<br />
+	3. Search results should be displayed without buffering.<br />
+	4. Download of file should be continued in the background.<br />
+	5. The file which we are pushing should be available in the destination folder without any loss of data.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5201" name="Audio-Conc:Check Audio play during adb push/pull">
+	<node_order><![CDATA[1065]]></node_order>
+	<externalid><![CDATA[262]]></externalid>
+	<fullexternalid><![CDATA[test-262]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play an MP3 file while adb push/pull</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. DUT should have Ethernet connection.<br />
+	3. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Music app.<br />
+	2. Play an audio file.<br />
+	3. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	4. Enter the &ldquo;adb push source path Destination path&rdquo; command in the DUT terminal.<br />
+	5. Check whether he file is copying to DUT&nbsp; or not.<br />
+	6. Repeat 4th step by replacing push with pull.<br />
+	7. Observe whether the file is copying from the DUT or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heared clearly without any glitches.<br />
+	2. The file should be copied into DUT without any loss of data.<br />
+	3. The file should be copied from&nbsp; DUT without any loss of data.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_audio_play_adb_push_pull.TestAudioPlayDuringAdbPushPull]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5204" name="Audio-Conc:Check Audio paly of big file using USB speakers while adb push/pull">
+	<node_order><![CDATA[1066]]></node_order>
+	<externalid><![CDATA[263]]></externalid>
+	<fullexternalid><![CDATA[test-263]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play a big MP3 file through USB speakers while adb push/pull</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. DUT should have Ethernet connection.<br />
+	3. Build should support playback of Audio .</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect USB headset speakers to the DUT.<br />
+	2. Open Music app.<br />
+	3. Play an audio file.<br />
+	4. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	5. Enter the &ldquo;adb push source path Destination path&rdquo; command in the DUT terminal.<br />
+	6. Check whether he file is copying to DUT&nbsp; or not.<br />
+	6. Repeat 4th step by replacing push with pull.<br />
+	7. Observe whether the file is copying from the DUT or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heared clearly through USB speakers without any glitches.<br />
+	2. The file should be copied into DUT without any loss of data.<br />
+	3. The file should be copied from&nbsp; DUT without any loss of data.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+</testsuite>
+<testsuite id="5207" name="Video" >
+<node_order><![CDATA[2]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="5208" name="Multimedia:Check H263 video codec with 3GPP container">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[46]]></externalid>
+	<fullexternalid><![CDATA[test-46]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the H.263 Video codec format with the 3GPP(.3gp) container files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. Boot the DUT up to Android Main menu.</div>
+<div>
+	2. The H.263 video codec supported files of .3gp container should be available for testing.</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the H.263 video codec supported of the .3gp container files into the device.</div>
+<div>
+	2. Open the Gallery Apk.</div>
+<div>
+	3. Select and Playback the above copied files from the device and check whether they are playing without any issues or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the H.263 video codec supported of the .3gp container files without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_H263_3GPP.TestVideoH263_3GPP]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5211" name="Multimedia:Check H263 video codec with MPEG-4 container">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[47]]></externalid>
+	<fullexternalid><![CDATA[test-47]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the H.263 Video codec format with the MPEG-4 (.mp4) container files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. Boot the DUT up to Android Main menu.</div>
+<div>
+	2. The H.263 video codec supported files of .mp4 container should be available for testing.</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the H.263 video codec supported of the .mp4 container files into the device.</div>
+<div>
+	2. Open the Gallery Apk.</div>
+<div>
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the H.263 video codec supported of the .mp4 container files without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_H263_MPEG_mp4.TestVideoH263_MPEG_MP4]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5214" name="Multimedia:Check H264 video codec with .3gp container">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[48]]></externalid>
+	<fullexternalid><![CDATA[test-48]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the H.264 AVC video codec with the container of&nbsp; .3gp files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. Boot the DUT up to Android Main menu.</div>
+<div>
+	2. The H.264 AVC video codec supported files of .3gp container should be available for testing.</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the H.264 AVC video codec supported of the .3gp container files into the device.</div>
+<div>
+	2. Open the Gallery Apk.</div>
+<div>
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the H.264 AVC video codec supported of the .3gp container files without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_H264_AVC_3gp.TestVideoH264_AVC_3GP]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5217" name="Multimedia:Check H264 video codec with .mp4 container">
+	<node_order><![CDATA[3]]></node_order>
+	<externalid><![CDATA[49]]></externalid>
+	<fullexternalid><![CDATA[test-49]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>Verify whether DUT is supporting the H.264 AVC video codec with the container of .mp4 files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<div>1. Boot the DUT up to Android Main menu.</div>
+
+<div>2. The H.264 AVC video codec supported files of .mp4 container should be available for testing.</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the H.264 AVC video codec supported of the .mp4 container files&nbsp; into the device.</div>
+<div>
+	2. Open the Gallery Apk.</div>
+<div>
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the H.264 AVC video codec supported of the .mp4 container files without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional ]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_H264_AVC_mp4.TestVideoH264AvcMp4]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5220" name="Multimedia:Check Video aspect ratio">
+	<node_order><![CDATA[4]]></node_order>
+	<externalid><![CDATA[50]]></externalid>
+	<fullexternalid><![CDATA[test-50]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether video files are able to be displayed in full screen mode(full aspect ratio)</p>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. DUT should boot up to Android Main menu.</div>
+<div>
+	2. DUT supported video codec files should be available for testing.</div>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the Video files into device.</div>
+<div>
+	2. Open Gallery Apk.</div>
+<div>
+	3. Select any Video and play the video.</div>
+<div>
+	4. Verify whether the video file is playing in full screen mode display or not, with out any issues.</div>
+]]></actions>
+	<expectedresults><![CDATA[<div>
+	1. DUT device should support playback of Video.</div>
+<div>
+	2. The files playing should be working fine in full screen mode with expected aspect ratio</div>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5223" name="Multimedia:Check H.264 AVC video codec with the container of the MPEG-TS(.ts)">
+	<node_order><![CDATA[5]]></node_order>
+	<externalid><![CDATA[106]]></externalid>
+	<fullexternalid><![CDATA[test-106]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the H.264 AVC video codec and AAC audio codec with the container of the MPEG-TS(.ts) file&nbsp; or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The H.264 AVC video codec and AAC audio codec supported file with the MPEG-TS(.ts) container should be available for testing.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the H.264 AVC video codec and AAC audio codec supported file with the MPEG-TS(.ts) container into the device.<br />
+	2. Open the Gallery Apk.<br />
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the H.264 AVC video codec and AAC audio codec supported file with the MPEG-TS(.ts) container without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_H264_AVC_ts.TestVideoH264_AVC_TS]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5226" name="Multimedia:Check H.265 HEVC video codec with the container of .mp4">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[107]]></externalid>
+	<fullexternalid><![CDATA[test-107]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the H.265 HEVC video codec with the container of .mp4 files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The H.265 HEVC video codec supported files of .mp4 container should be available for testing.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the H.265 HEVC video codec supported of the .mp4 container files&nbsp; into the device.<br />
+	2. Open the Gallery Apk.<br />
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the H.265 HEVC video codec supported of the .mp4 container files without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_H265_mp4.TestVideoH265_MP4]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5229" name="Multimedia:Check VP8 codec with the container of the .webm">
+	<node_order><![CDATA[7]]></node_order>
+	<externalid><![CDATA[108]]></externalid>
+	<fullexternalid><![CDATA[test-108]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the VP8 codec with the container of the .webm file or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The VP8&nbsp; codec supported file of .webm container should be available for testing.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the VP8 codec supported container of the .webm file into the device.<br />
+	2. Open the Gallery Apk.<br />
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the VP8 codec supported container of the&nbsp; .webm file without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_VP8_webm.TestVideoVP8_WEBM]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5232" name="Multimedia:Check VP8 codec with the container of the .mkv">
+	<node_order><![CDATA[8]]></node_order>
+	<externalid><![CDATA[109]]></externalid>
+	<fullexternalid><![CDATA[test-109]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the VP8 codec with the container of the .mkv file or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The VP8&nbsp; codec supported file of .mkv container should be available for testing.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the VP8 codec supported container of the .mkv file into the device.<br />
+	2. Open the Gallery Apk.<br />
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the VP8 codec supported container of the&nbsp; .mkv file without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_VP8_mkv.TestVideoVP8_MKV]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5235" name="Multimedia:Check VP9 codec with the container of the .webm">
+	<node_order><![CDATA[9]]></node_order>
+	<externalid><![CDATA[110]]></externalid>
+	<fullexternalid><![CDATA[test-110]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the VP9 codec with the container of the .webm file or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The VP9&nbsp; codec supported file of .webm container should be available for testing.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the VP9 codec supported container of the .webm file into the device.<br />
+	2. Open the Gallery Apk.<br />
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the VP9 codec supported container of the&nbsp; .webm file without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_VP9_webm.TestVideoVP9_WEBM]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5238" name="Multimedia:Check playback of Video streaming">
+	<node_order><![CDATA[10]]></node_order>
+	<externalid><![CDATA[111]]></externalid>
+	<fullexternalid><![CDATA[test-111]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the playback of Video streaming or not</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. DUT should have the internet facility (Wi-Fi / Ethernet)</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1.Open the Browser Apk,<br />
+	2. Open the &ldquo;https://m.youtube.com&rdquo; URL.<br />
+	3. Play any Video.<br />
+	4. Check whether the video is playing without any issues or not<br />
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	The DUT device should be able to play the streaming video without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_youtube_play.TestVideo_youtube_play]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5241" name="Multimedia:Check Video Pause and Play functionality">
+	<node_order><![CDATA[11]]></node_order>
+	<externalid><![CDATA[113]]></externalid>
+	<fullexternalid><![CDATA[test-113]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify video file Pause/Play functionality.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1.DUT should boot up to Android Main menu<br />
+	2. Build should support playback of Audio and Video streams</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy video streams to DUT<br />
+	2. Open Gallery and select any video file and playback it.<br />
+	3. Pause the video while playing<br />
+	4. Try to resume/play the video after pause<br />
+	<br />
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Video playback should work fine, Audio video sync should be maintained.<br />
+	2. Pause/Play functions should work fine<br />
+	3. The file should be played from the specified position where it is paused<br />
+	&nbsp;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_pause_play.TestVideo_play_pause]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5244" name="Multimedia:Check Video progress bar functionality">
+	<node_order><![CDATA[12]]></node_order>
+	<externalid><![CDATA[213]]></externalid>
+	<fullexternalid><![CDATA[test-213]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the video progress bar seek functionality.</p>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1.DUT should boot up to Android Main menu</div>
+<div>
+	2. Build should support playback of Audio and Video streams</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy video streams to DUT&nbsp;</div>
+<div>
+	2. Open Gallery and select any video file and playback it.</div>
+<div>
+	3. While video playback is going on, seek the progress bar and check whether it is playing as per the user seek place or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<div>
+	1. Gallery should open successfully and video playback should work fine.</div>
+<div>
+	2. When user seek the progress bar, video should be played from the seek position without any issues.</div>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_progressbar_seek.TestVideoProgressbarSeek]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5247" name="Video:Check AV1 video codec files">
+	<node_order><![CDATA[13]]></node_order>
+	<externalid><![CDATA[272]]></externalid>
+	<fullexternalid><![CDATA[test-272]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp; AV1&nbsp; video codec format&nbsp; files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot&nbsp; up to Android Main menu.<br />
+	2. The AV1&nbsp; codec supported file&nbsp; should be available for testing.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the AV1 codec supported container of the .webm file into the device.<br />
+	2. Open the Mxplayer Apk.<br />
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The device should playback the AV1 codec supported&nbsp; file without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_AV1.TestVideoAVI]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5250" name="Video:Check video with QVGA resolution">
+	<node_order><![CDATA[14]]></node_order>
+	<externalid><![CDATA[273]]></externalid>
+	<fullexternalid><![CDATA[test-273]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp; video with QVGA resolution functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio and Video streams.<br />
+	3. The DUT should support QVGA (320x240)resolution videos.<br />
+	4. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy QVGA resolution videos into DUT.<br />
+	2. Open Mxplayer app and play the QVGA video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1.The DUT should playback the QVGA resolution video file without any glitches and audio &amp; video should be synced.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_QVGA.TestVideoQVGA]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5253" name="Video:Check video with VGA resolution">
+	<node_order><![CDATA[15]]></node_order>
+	<externalid><![CDATA[274]]></externalid>
+	<fullexternalid><![CDATA[test-274]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp; video with VGA resolution functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio and Video streams.<br />
+	3. The DUT should support VGA (640x480)resolution videos.<br />
+	4. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy VGA resolution videos into DUT.<br />
+	2. Open Mxplayer app and play the VGA video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should playback the VGA resolution video file without any glitches and audio &amp; video should be synced.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_VGA.TestVideoVGA]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5256" name="Video:Check video with 720p resolution">
+	<node_order><![CDATA[16]]></node_order>
+	<externalid><![CDATA[275]]></externalid>
+	<fullexternalid><![CDATA[test-275]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp; video with 720p resolution functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. The DUT should support 720p (1280x720)resolution videos.<br />
+	4. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy 720p resolution videos into DUT.<br />
+	2. Open Mxplayer app and play the 720p video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should playback the 720p resolution video file without any glitches and audio &amp; video should be synced.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_720p.TestVideo720p]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5259" name="Video:Check video with 1080p resolution">
+	<node_order><![CDATA[17]]></node_order>
+	<externalid><![CDATA[276]]></externalid>
+	<fullexternalid><![CDATA[test-276]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp; video with 1080p resolution functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3.The DUT should support&nbsp; 1080p (1920x1080)resolution videos.<br />
+	4.DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy 1080p resolution videos into DUT.<br />
+	2. Open Mxplayer app and play the 1080p video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should playback the 1080p resolution video file without any glitches and audio &amp; video should be synced.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_1080p.TestVideo1080p]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5262" name="Video:Check video with 4k resolution">
+	<node_order><![CDATA[18]]></node_order>
+	<externalid><![CDATA[277]]></externalid>
+	<fullexternalid><![CDATA[test-277]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp; video with 4k resolution functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3.The DUT should support&nbsp; 4k(4096x2160) resolution videos.<br />
+	4.DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy 4k resolution videos into DUT.<br />
+	2. Open Mxplayer app and play the 4k video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should playback the 4k resolution video file without any glitches and audio &amp; video should be synced.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_4k.TestVideo4k]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5265" name="Video:Check video play and stop functionality">
+	<node_order><![CDATA[19]]></node_order>
+	<externalid><![CDATA[278]]></externalid>
+	<fullexternalid><![CDATA[test-278]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the video&nbsp; play and stop functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy video streams to DUT.<br />
+	2. Open Mxplayer Apk and select any video file and playback it.<br />
+	3. Stop the video while playing.<br />
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Video playback should work fine, Audio video sync should be maintained.<br />
+	2. Play and stop functions should work fine.<br />
+	&nbsp;</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_play_and_back.TestVideo_play_back]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5268" name="Video:Check video rewind and forward functionality">
+	<node_order><![CDATA[20]]></node_order>
+	<externalid><![CDATA[279]]></externalid>
+	<fullexternalid><![CDATA[test-279]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the video rewind and forward functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy video streams to DUT.<br />
+	2. Open Mxplayer Apk and play an video file.<br />
+	3. Click on rewind option.<br />
+	4.&nbsp; After sometime click on forward option.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When we click onrewind option it will play the scene for a particular bit backward.<br />
+	2. When we click on forward option it will move the video for a specific bit forward.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_forward_rewind.TestVideoForwardRewind]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5271" name="Video:Check video next and previous functionality">
+	<node_order><![CDATA[21]]></node_order>
+	<externalid><![CDATA[280]]></externalid>
+	<fullexternalid><![CDATA[test-280]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video next and previous functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the Mxplayer app.<br />
+	2. Playback any video file.<br />
+	3. Click on next button.<br />
+	4. After some time click on previous button.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The video should visible clearly and it&nbsp; should be audible without any distortions or corruptions.<br />
+	2. While we press the next button it should play the next video immediately.<br />
+	3. When&nbsp; we press the previous button it should&nbsp; play the previous video without any delay.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_next_previous.TestVideonextprevious]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5274" name="Video:Check video startover and resume functionality">
+	<node_order><![CDATA[22]]></node_order>
+	<externalid><![CDATA[281]]></externalid>
+	<fullexternalid><![CDATA[test-281]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video startover and resume functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1.Open the Mxplayer&nbsp; app.<br />
+	2. playback any video file.<br />
+	3. Close the gallery app.<br />
+	4. Again open Mxplayer app and try to play the video,it should show a dialogue box &ldquo;start over&rdquo; or &ldquo;Resume&rdquo;.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. If we select start over it should play the video from the beginning.<br />
+	2. If we select Resume it should play the video from where it has previously stopped.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_startover_resume.TestVideoStartoverResume]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5277" name="Video:Check video volume(increase/decrease) functionality">
+	<node_order><![CDATA[23]]></node_order>
+	<externalid><![CDATA[282]]></externalid>
+	<fullexternalid><![CDATA[test-282]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video volume(Increase/Decrease) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Mxplayer&nbsp; app.<br />
+	2. Go to settings-&gt;More-&gt;media volume,then select the volume as our wish.<br />
+	3. Now, play the video file.<br />
+	4. Again repeat the step-2 and play the file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. While increasing or decreasing the volume,we should feel and able to recognize variations in sound and video should be played without any distortions.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_volume_up_and_down.TestVolume_Up_Down]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5280" name="Video:Check video contrast functionality">
+	<node_order><![CDATA[24]]></node_order>
+	<externalid><![CDATA[283]]></externalid>
+	<fullexternalid><![CDATA[test-283]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video contrast functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open MXplayer app.<br />
+	2. Play any video file with the default brightness.<br />
+	3. After that pause the video and go to&nbsp; Settings-&gt;Display-&gt;brightness level and then varying the brightness level.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. While increasing or decreasing the brightness,we should feel and able to recognize variations in the contrast functionality of video file.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5283" name="Video:Check device to play large video files functionality">
+	<node_order><![CDATA[25]]></node_order>
+	<externalid><![CDATA[284]]></externalid>
+	<fullexternalid><![CDATA[test-284]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check&nbsp; the DUT is supporting the&nbsp; large video files or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy large duration&nbsp; video files into&nbsp; DUT.<br />
+	2. Open MXplayer app.<br />
+	3. Play the large video files.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The large video file should be played without any distortions or corruptions.<br />
+	2. The file should be played upto its duration.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_large_video_file.TestLarge_video_file]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5286" name="Video:Check video quality functionality">
+	<node_order><![CDATA[26]]></node_order>
+	<externalid><![CDATA[285]]></externalid>
+	<fullexternalid><![CDATA[test-285]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp; varying quality functionality&nbsp; or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should have Ethernet or WiFi connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the Browser Apk.<br />
+	2. Open the &ldquo;https://m.youtube.com&rdquo; URL.<br />
+	3.&nbsp; Play any Video.<br />
+	4. Go to Playback Settings-&gt;Quality and then select different types of quality for differernt time.<br />
+	5. While we are changing the quality the video quality should also vary according to that.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. According to selected quality&nbsp; the video visibility(clarity) should be varied.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5289" name="Video:Check video synchronization functionality">
+	<node_order><![CDATA[27]]></node_order>
+	<externalid><![CDATA[286]]></externalid>
+	<fullexternalid><![CDATA[test-286]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting the Video synchronization functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of&nbsp; Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open Mxplayer&nbsp; app.<br />
+	2. Play any video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The&nbsp; video and audio should be synced without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5292" name="Video:Check video functionality after hard shutdown">
+	<node_order><![CDATA[28]]></node_order>
+	<externalid><![CDATA[287]]></externalid>
+	<fullexternalid><![CDATA[test-287]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the&nbsp;&nbsp;&nbsp; Video&nbsp; after hard shutdown functionality&nbsp; or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open MXplayer&nbsp; app and play any video file.<br />
+	2. Shut down&nbsp; the DUT by using power button suddenly while playing the video file or close the MXplayer app and then shut down the system.<br />
+	3. Then power up the DUT&nbsp; and open the Mxplayer&nbsp; and play any video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Video playback should work fine, Audio video sync should be maintained.<br />
+	2. The files should be played without any clashes after hard shutdown of the DUT.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5295" name="Video:Check video is playing completely or not">
+	<node_order><![CDATA[29]]></node_order>
+	<externalid><![CDATA[288]]></externalid>
+	<fullexternalid><![CDATA[test-288]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check&nbsp; the DUT is supporting the&nbsp; video is playing upto its duration period or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Cpoy video streams into device.<br />
+	2. Open MXplayer app.<br />
+	3. Open and play above copied any video file.<br />
+	4. Observe the duation of the video.&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. After completion of video play observe the time duration for which it has been played.<br />
+	2. It should exactly equal to the time of video which is observed before playing the video.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_duration.TestVideoduration]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5298" name="Video:Check video playing through USB functionality">
+	<node_order><![CDATA[30]]></node_order>
+	<externalid><![CDATA[289]]></externalid>
+	<fullexternalid><![CDATA[test-289]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video&nbsp; playing through USB storage functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy some files into USB storage.<br />
+	2. Connect the USB storage to device USB port.<br />
+	3. Play any video file from the USB storage.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1.&nbsp; The video should be visible clearly and audio should be heard without any distortions or corruptions when playing them from the USB storage.<br />
+	2. When&nbsp; disconnected the USB storage,the video play should be stopped.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_play_usb.TestVideoplayusb]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5301" name="Video:Check video functionality to display error message">
+	<node_order><![CDATA[31]]></node_order>
+	<externalid><![CDATA[290]]></externalid>
+	<fullexternalid><![CDATA[test-290]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; to display an error message while playing the corrupted files/invalid formats or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1.&nbsp; Open MXplayer app.<br />
+	2. Copy some corrupted and invalid files into DUT.<br />
+	3. Play any corrupted file.<br />
+	4. After that play an invalid format file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When playback the corrpted file, it should show an error message that &ldquo;can&#39;t play the file&rdquo;.<br />
+	2. When playback an invalid file, it should show an error message like &ldquo;file format unsupported&rdquo;.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_corrupted.TestVideocorrupt]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5304" name="Video:Check video playing through USB headset">
+	<node_order><![CDATA[32]]></node_order>
+	<externalid><![CDATA[291]]></externalid>
+	<fullexternalid><![CDATA[test-291]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video playing through USB headset(plugin/plugout) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy video files into device.<br />
+	2. Connect the USB headset to the target device and check whether USB headset is detected or not.<br />
+	3. Open&nbsp; MXplayer app and play any video file.<br />
+	4. After some time&nbsp; Plug-out the headset.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Target device&nbsp; should&nbsp; detect the connected USB headset when plugged-in.<br />
+	2. The video file playback sound should be heared through USB headset without any glitches.<br />
+	3. When plugout the headset, the video should be stopped.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5307" name="Video:Check video playing through audio jack">
+	<node_order><![CDATA[33]]></node_order>
+	<externalid><![CDATA[292]]></externalid>
+	<fullexternalid><![CDATA[test-292]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video playing through Audio jack(plugin/plugout) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy video files into device.<br />
+	2. Connect the&nbsp; headset to the target device and check whether&nbsp; headset is detected or not.<br />
+	3. Open MXplayer app and play any video file.<br />
+	4.&nbsp; After some time&nbsp; Plug-out the headset.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. DUT&nbsp; should&nbsp; detect the connected&nbsp; headset when plugged-in.<br />
+	2. The file should be heared&nbsp; through headset without any glitches video should be clearly visible without any clashes.<br />
+	3. when we plugout the headset the video should be stopped.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5310" name="Video:Check video playing through BT headset">
+	<node_order><![CDATA[34]]></node_order>
+	<externalid><![CDATA[293]]></externalid>
+	<fullexternalid><![CDATA[test-293]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video playing through BT headset(plugin/plugout) functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy video files into device.<br />
+	2. Turn on the bluetooth.<br />
+	3. Pair the bluetooth headset with DUT.<br />
+	4. Open MXplayer app and play any video file.<br />
+	5. Disconnect the bluetooth with DUT.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. DUT&nbsp; should pair with&nbsp; bluetooth headset without any issues.<br />
+	2. Video&nbsp; should be clearly visible and must be audible through bluetooth headset.<br />
+	3. When bluetooth headset is disconnected from the DUT the Video will be continued to play through speakers.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5313" name="Video:Check video functionality of file pushed using adb push">
+	<node_order><![CDATA[35]]></node_order>
+	<externalid><![CDATA[294]]></externalid>
+	<fullexternalid><![CDATA[test-294]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play the video file which is pushed into DUT through adb push command</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	2. Enter the &ldquo;adb push source path Destination path&rdquo; command in PC terminal.<br />
+	3. Check whether file is copying into the DUT or not.<br />
+	4. Open Mxplayer.<br />
+	5. Go to USB, and thenPlay the file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The video which has pushed into the DUT should play without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_push_and_play.TestVideo_push_and_play]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5316" name="Video:Check video playing after USB plugged out">
+	<node_order><![CDATA[36]]></node_order>
+	<externalid><![CDATA[295]]></externalid>
+	<fullexternalid><![CDATA[test-295]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play the video&nbsp; file through USB even after it is plugged out</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Audio.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the USB to the DUT.<br />
+	2. Go to Files.<br />
+	3. Play any video file.<br />
+	4. After sometime plugout the USB.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should detect the USB successfully.<br />
+	2. The file should be played clearly without any issues.<br />
+	3. While we plug out the USB the file should stop playing showing message can&#39;t play the video.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5319" name="Video-Str:Check video 20 times play/pause and stop functionality">
+	<node_order><![CDATA[37]]></node_order>
+	<externalid><![CDATA[297]]></externalid>
+	<fullexternalid><![CDATA[test-297]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check&nbsp; the DUT is supporting the&nbsp; video after 20 times&nbsp; play and&nbsp; pause or play and stop or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Mxplayer should be installed in the DUT.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy video streams to DUT.<br />
+	2. Open Mxplayer and select any video file and playback it.<br />
+	3. Pause/stop&nbsp; the video while playing.<br />
+	4. Again play the video.<br />
+	5. Repeat 3,4 steps for 20 times.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Video playback should work fine, Audio video sync should be maintained.<br />
+	2. Pause/Play functions should work fine<br />
+	3. The file should be played from the specified position where it is paused.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5322" name="Video-Str:Check video playing 50 files">
+	<node_order><![CDATA[38]]></node_order>
+	<externalid><![CDATA[298]]></externalid>
+	<fullexternalid><![CDATA[test-298]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video by playing 50 files continuously or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of video.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy 50 files into the DUT.<br />
+	2. Open Mxplayer app<br />
+	3. Play any one of the video file.<br />
+	4. After completion of playing 1 video file it will show a dialogue box &#39;start over&#39; or &#39;resume&#39; the next video.<br />
+	5. We have to select our required option.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Video Should be clear and it should be audible&nbsp; without any distortions or corruptions.<br />
+	2. Options shown in dialogue box should work fine.<br />
+	3. The files should be Stop when pressing on Stop button only.<br />
+	4. As long as we didnot stop the videos it should play videos continuously one after another without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5325" name="Video-Str:Check video playing after 25 times reboot">
+	<node_order><![CDATA[39]]></node_order>
+	<externalid><![CDATA[299]]></externalid>
+	<fullexternalid><![CDATA[test-299]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check&nbsp; the DUT is supporting the&nbsp; videos playing after rebooting system for multiple(25) times or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of video .<br />
+	3. DUT should contain Mxplayer APK.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Reboot the DUT for 25 times continuously by using adb reboot command.<br />
+	2. Open Mxplayer.<br />
+	3. Play any video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The DUT should boot 25 times upto android main menu.<br />
+	2. The video should be played with audio and video synchronization.<br />
+	3. The video should be played without any glitches and clashes.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5328" name="Video-Str:Check video to play 25 invalid files">
+	<node_order><![CDATA[40]]></node_order>
+	<externalid><![CDATA[300]]></externalid>
+	<fullexternalid><![CDATA[test-300]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play 25 invalid or corrupted files continuously</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	. Open Mxplayer app.<br />
+	2. Copy 25 corrupted and 25 invalid files into DUT.<br />
+	3. Play above copied corrupted files and invalid files.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When we try to play a corrupted file it should show an error message that &ldquo;can&#39;t play the file&rdquo;.<br />
+	2. When we are trying to play an invalid file it should show an error message &ldquo;file format unsupported&rdquo;.<br />
+	3. As long as we play any number of files,for ex:25 files the DUT should show the same message every time without any clashes.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5331" name="Video-Conc:Check video play during Airplane mode(ON/OFF)">
+	<node_order><![CDATA[41]]></node_order>
+	<externalid><![CDATA[301]]></externalid>
+	<fullexternalid><![CDATA[test-301]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video while airplane mode in(ON/OFF) conditions or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Cpoy video streams into device.<br />
+	2. Open MXplayer app.<br />
+	3. Open and play above copied any video file.<br />
+	4. Turn on the airplane mode.<br />
+	5. After sometime turn off the airplane mode.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The video&nbsp; should be visible clearly&nbsp; and audio should be clear without any distortions or corruptions even though turn on/off the airplane mode without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_play_airplane_mode.TestVideoplayAndAirplanemode]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5334" name="Video-Conc:Check video play during BT (ON/OFF)">
+	<node_order><![CDATA[42]]></node_order>
+	<externalid><![CDATA[302]]></externalid>
+	<fullexternalid><![CDATA[test-302]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting&nbsp; the video&nbsp; while bluetooth in(ON/OFF) conditions or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support playback of Video streams.<br />
+	3. DUT should contain MX player apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Cpoy video streams into device.<br />
+	2. Open MXplayer app.<br />
+	3. Open and play above copied any video file.<br />
+	4. Turn on the bluetooth.<br />
+	5. After sometime turn off the bluetooth.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The video&nbsp; should be visible clearly&nbsp; and audio should be clear without any distortions or corruptions even though turn on/off the bluetooth option.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5337" name="Video-Conc:Check video play during alarm time">
+	<node_order><![CDATA[43]]></node_order>
+	<externalid><![CDATA[303]]></externalid>
+	<fullexternalid><![CDATA[test-303]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting alarm while playing a video file</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. DUT should contain Mxplayer.<br />
+	3. The DUT should support&nbsp; alarm Apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Go to alarm.<br />
+	2. Set alam after 30 seconds.<br />
+	3. Go to MXplayer app.<br />
+	4. Play any video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The alarm should set successfully without any issues.<br />
+	2. The video should synchronize with audio and it should be played without any issue.<br />
+	3. After 30 seconds also the video should continue to play.<br />
+	4. The alarm should start.<br />
+	5. After the alarm completes ranging also the video should be played clearly without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5340" name="Video-Conc:Check video while downloading and pushing">
+	<node_order><![CDATA[44]]></node_order>
+	<externalid><![CDATA[304]]></externalid>
+	<fullexternalid><![CDATA[test-304]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting downloading file through ethernet or wifi,playing a video file and pushing a file using adb push command</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of video .<br />
+	3. The DUT should support Mxplayer.<br />
+	4. The DUT should have Ethernet and WiFi connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1.&nbsp; Go to browser and type Mp4 video download in search menu.<br />
+	2. Click on any one of available links.<br />
+	3. Click on any one of MP4 file you want to download.<br />
+	4. Then click on download option showing there.<br />
+	5. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	6. Enter the &ldquo;adb push source path Destination path&rdquo;.<br />
+	7. Open MXplayer app.<br />
+	8. Play any video file.<br />
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The video should be played without any stability issues.<br />
+	2. Search results should be displayed without buffering.<br />
+	3. Download of file should be continued in the background.<br />
+	4. The file which we are pushing should be available in the destination folder without any loss of data.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5343" name="Video-Conc:Check video playing through BT headset while downloading and using adb push command">
+	<node_order><![CDATA[45]]></node_order>
+	<externalid><![CDATA[305]]></externalid>
+	<fullexternalid><![CDATA[test-305]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting downloading file through ethernet or wifi,playing a video file through BT headset and pushin a file using adb push command</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support playback of video.<br />
+	3. The DUT should support MXplayer apk.<br />
+	4. The DUT should have Ethernet and WiFi connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Go to settings-&gt;bluetooth.<br />
+	2. Enable the bluetooth.<br />
+	3. Pair the DUT with available bluetooth headset.<br />
+	4.&nbsp; Go to browser and type Mp4 video download in search menu.<br />
+	5. Click on any one of available links.<br />
+	6. Click on any one of MP4 file you want to download.<br />
+	7. Then click on download option showing there.<br />
+	8. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	9. Enter the &ldquo;adb push source path Destination path&rdquo;.<br />
+	10. Open MXplayer app.<br />
+	11. Play any video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The bluetooth headset should be paired with DUT without any issues.<br />
+	2. Search results should be displayed without buffering.<br />
+	3. Download of file should be continued in the background.<br />
+	4. The file which we are pushing should be available in the destination folder without any loss of data.<br />
+	5.&nbsp; The video should be heared clearly in the bluetooth headset without any glitches.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5346" name="Video-Conc:Check video playing while using adb push/pull">
+	<node_order><![CDATA[46]]></node_order>
+	<externalid><![CDATA[306]]></externalid>
+	<fullexternalid><![CDATA[test-306]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play a video file while adb push/pull</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. DUT should have Ethernet connection.<br />
+	3. DUT should contain Mxplayer APK .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	2. Enter the &ldquo;adb push source path Destination path&rdquo; command in the DUT terminal.<br />
+	3. Check whether he file is copying to DUT&nbsp; or not.<br />
+	4. Repeat 4th step by replacing push with pull.<br />
+	5. Observe whether the file is copying from the DUT or not.<br />
+	6. Open MXplayer app.<br />
+	7. Play any video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The audio should be heared clearly without any glitches.<br />
+	2. The file should be copied into DUT without any loss of data.<br />
+	3. The file should be copied from&nbsp; DUT without any loss of data.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_video_play_while_adb_push_pull.TestAdb_push_pullwhileVideoPlay]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5349" name="Video-Conc:Check video playing through USB speakers while using adb push/pull command">
+	<node_order><![CDATA[47]]></node_order>
+	<externalid><![CDATA[307]]></externalid>
+	<fullexternalid><![CDATA[test-307]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting to play a big video file through USB speakers while adb push/pull</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. DUT should have Ethernet connection.<br />
+	3. DUT should contain Mxplayer APK .</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Connect USB headset speakers to the DUT.<br />
+	2. Connect the device to Ethernet IP address using the command &ldquo;adb connect &lt;IP address of the Ethernet cable&gt;.<br />
+	3. Enter the &ldquo;adb push source path Destination path&rdquo; command in the DUT terminal.<br />
+	4. Check whether he file is copying to DUT&nbsp; or not.<br />
+	5. Repeat 4th step by replacing push with pull.<br />
+	6. Observe whether the file is copying from the DUT or not.<br />
+	7.&nbsp; Open MXplayer app.<br />
+	8. Play any video file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1.&nbsp; The file should be copied into DUT without any loss of data.<br />
+	2. The file should be copied from&nbsp; DUT without any loss of data.<br />
+	3. The video should be synchronized with audio and audio should be&nbsp; heared clearly through USB speakers without any glitches.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5352" name="Video: Check whether H264 codec video is exiting from gallery using back button">
+	<node_order><![CDATA[48]]></node_order>
+	<externalid><![CDATA[508]]></externalid>
+	<fullexternalid><![CDATA[test-508]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Video: Check whether H264 codec video is exiting from gallery using back button</p>
+]]></summary>
+	<preconditions><![CDATA[<p>]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the H.264 AVC video codec supported of the .mp4 container files&nbsp; into the device.</div>
+<div>
+	2. Open the Gallery Apk.</div>
+<div>
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</div>
+<div>
+	4. Exit the video playing using back button.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Video playing should exit using back button</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5355" name="Video: Check whether H265 codec video is exiting from gallery using back button">
+	<node_order><![CDATA[49]]></node_order>
+	<externalid><![CDATA[509]]></externalid>
+	<fullexternalid><![CDATA[test-509]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Video: Check whether H265 codec video is exiting from gallery using back button</p>
+]]></summary>
+	<preconditions><![CDATA[<p>]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the H.265 AVC video codec supported of the .mp4 container files&nbsp; into the device.</div>
+<div>
+	2. Open the Gallery Apk.</div>
+<div>
+	3. Playback the above copied files from the device and check whether they are playing without any issues or not.</div>
+<div>
+	4. Exit the video playing using back button.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	Video playing should exit using back button</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+</testsuite>
+<testsuite id="5358" name="Images" >
+<node_order><![CDATA[3]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="5359" name="Multimedia:Check JPEG decode functionality">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[51]]></externalid>
+	<fullexternalid><![CDATA[test-51]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<div>
+	Verify whether DUT is supporting the JPEG image decode format or not:</div>
+<div>
+	&nbsp;</div>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. Boot the DUT up to Android Main menu.</div>
+<div>
+	2. The JPEG image format should be available for testing.</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the image of JPEG format into the device.</div>
+<div>
+	2. Open Gallery Apk.</div>
+<div>
+	2. Open the above copied image from the device and check whether image is clearly visible or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The image of JPEG formate file should be open and show without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_jpeg_image_decode.TestJpegImageDecode]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5362" name="Multimedia:Check PNG decode functionality">
+	<node_order><![CDATA[1007]]></node_order>
+	<externalid><![CDATA[52]]></externalid>
+	<fullexternalid><![CDATA[test-52]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<div>
+	Verify whether DUT is supporting the PNG image decode format or not:</div>
+<div>
+	&nbsp;</div>
+]]></summary>
+	<preconditions><![CDATA[<div>
+	1. Boot the DUT up to Android Main menu.</div>
+<div>
+	2. The PNG image format should be available for testing.</div>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<div>
+	1. Copy the image of PNG format into the device.</div>
+<div>
+	2. Open Gallery Apk.</div>
+<div>
+	2. Open the above copied image from the device and check whether image is clearly visible or not.</div>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The image of PNG formate file should be open and show without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_png_image_decode.TestPNGImageDecode]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5365" name="Multimedia:Check BMP image decode functionality">
+	<node_order><![CDATA[1018]]></node_order>
+	<externalid><![CDATA[114]]></externalid>
+	<fullexternalid><![CDATA[test-114]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the BMP image decode format or not:<br />
+	&nbsp;</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The BMP image format should be available for testing.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the image of BMP format into the device.<br />
+	2. Open Gallery Apk.<br />
+	2. Open the above copied image from the device and check whether image is clearly visible or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The image of BMP formate file should be open and show without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_bmp_image_decode.TestBmpImageDecode]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5368" name="Multimedia:Check GIF image decode functionality">
+	<node_order><![CDATA[1019]]></node_order>
+	<externalid><![CDATA[115]]></externalid>
+	<fullexternalid><![CDATA[test-115]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Verify whether DUT is supporting the GIF image decode format or not:<br />
+	&nbsp;</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The GIF image format should be available for testing.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the image of&nbsp; GIF format into the device.<br />
+	2. Open Gallery Apk.<br />
+	2. Open the above copied image from the device and check whether image is clearly visible or not.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The image of&nbsp; GIF formate file should be open and show without any issues.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[Functional]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_image_gif_decode.TestgifDecode]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5371" name="Image:Check image croping functionality">
+	<node_order><![CDATA[1020]]></node_order>
+	<externalid><![CDATA[264]]></externalid>
+	<fullexternalid><![CDATA[test-264]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the crop image&nbsp; functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The Dut should support Gallery apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the image of PNG format into the device.<br />
+	2. Open the gallery app.<br />
+	3. Open any one of the image file.<br />
+	4. Click on the image,go to Settings-&gt;crop.<br />
+	5. Select the length of image of the size as per our requirement.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The image should be cropped as our wish without any issue.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5374" name="Image:Check image delete functionality">
+	<node_order><![CDATA[1021]]></node_order>
+	<externalid><![CDATA[265]]></externalid>
+	<fullexternalid><![CDATA[test-265]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the delete image&nbsp; functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The Dut should support Gallery apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the image of PNG format into the device.<br />
+	2. Open the gallery app.<br />
+	3. Long press on any one of the image file.<br />
+	4. Click on the menu button delete option will be shown then click on that.<br />
+	5. Select the required option in dialogue box.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Delete dialogue box should show with the message of &ldquo;Are you sure want to delete? Yes or No&rdquo; when clicked on delete option.<br />
+	2. Image should be deleted from the galler,when clicked on &ldquo;Yes&rdquo; option and Image should not delete when click on &ldquo;No&rdquo; option.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_image_delete.TestBmpImageDelete]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5377" name="Image:Check image rotating functionality">
+	<node_order><![CDATA[1022]]></node_order>
+	<externalid><![CDATA[266]]></externalid>
+	<fullexternalid><![CDATA[test-266]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the rotate&nbsp; image&nbsp; functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The DUT should support Gallery apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the image of PNG format into the device.<br />
+	2. Open the gallery app.<br />
+	3. Long press on any one of the image file.<br />
+	4. Click on menu button, Rotate option will be displayed click on that option.<br />
+	5. It will show dialogue box&nbsp; and we have to select our required option.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The image should be rotated as our specified option without any clashes.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5380" name="Image:Check image details functionality">
+	<node_order><![CDATA[1023]]></node_order>
+	<externalid><![CDATA[267]]></externalid>
+	<fullexternalid><![CDATA[test-267]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the&nbsp; image details functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The Dut should support Gallery apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy the image of PNG format into the device.<br />
+	2. Open the gallery app.<br />
+	3. Long press on any one of the image file.<br />
+	4. Click on details option.&nbsp;&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. When click on details option of ther Image, the details of the image should display like storage,format etc., without any issue.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5383" name="Image-Str:Check image slideshow functionality">
+	<node_order><![CDATA[1024]]></node_order>
+	<externalid><![CDATA[268]]></externalid>
+	<fullexternalid><![CDATA[test-268]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the&nbsp; image slideshow functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The Dut should support Gallery apk.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Open the Gallery app.<br />
+	2. Select&nbsp; slideshow option.<br />
+	3. Open any image file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Images should be displayed one after another continuously&nbsp; without any clashes.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5386" name="Image-Conc:Check image slideshow functoionality while downloading">
+	<node_order><![CDATA[1025]]></node_order>
+	<externalid><![CDATA[296]]></externalid>
+	<fullexternalid><![CDATA[test-296]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check the DUT is supporting image slideshow while downloading a file through wifi or not</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. Boot the DUT up to Android Main menu.<br />
+	2. The Dut should support Gallery apk.<br />
+	3. DUT should have Ethernet connection.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Go to browser and type good morning gif download in search menu.<br />
+	2. Click on any one of available links.<br />
+	3. Click on any one of gif file&nbsp; you want to download.<br />
+	4. Then click on download option showing there.<br />
+	5. Open the Gallery app.<br />
+	6. Select&nbsp; slideshow option.<br />
+	7. Open any image file.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Search results should be displayed without buffering.<br />
+	2. Download of file should be continued in the background.<br />
+	3. Images should be displayed one after another continuously&nbsp; without any clashes.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+</testsuite>
+<testsuite id="5389" name="Text" >
+<node_order><![CDATA[4]]></node_order>
+<details><![CDATA[]]></details> 
+
+<testcase internalid="5390" name="Text:Check text file open and close functionality">
+	<node_order><![CDATA[1000]]></node_order>
+	<externalid><![CDATA[269]]></externalid>
+	<fullexternalid><![CDATA[test-269]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the text file open and close functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu<br />
+	2. Build should support text file(.txt) format .</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy text file into device which has some data,<br />
+	2. Open text file from any application like chrome or HTML viewer or any other third party document reader applications by going to Settings -&gt; Storage -&gt; Explore and click on that.<br />
+	3. Then close the file.<br />
+	<br />
+	&nbsp;</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. The text file should be opened and closed without any issues.<br />
+	2. The .txt file should be readable by us.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_text_open.TestOpenText]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5393" name="Text:Check text file delete functionality">
+	<node_order><![CDATA[1001]]></node_order>
+	<externalid><![CDATA[270]]></externalid>
+	<fullexternalid><![CDATA[test-270]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the text files delete functionality or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support text file(.txt) format.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy text file into device which has some data.<br />
+	2. Open text file from any application like chrome or HTML viewer or any other third party document reader applications by going to Settings -&gt; Storage -&gt; Explore and click on that<br />
+	3. Double click on text file.<br />
+	4. It will show us delete icon.<br />
+	5. click on delete icon.<br />
+	6. It will show a dialogue box &quot;Delete *.txt? Yes or No&quot;,we have to select our required option.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. Delete dialogue box should show with the message of &ldquo;Are you sure want to delete? Yes or No&rdquo; when clicked on delete option for text file.<br />
+	2. The text file should be deleted from the galler,when clicked on &ldquo;Yes&rdquo; option and text file should not delete when click on &ldquo;No&rdquo; option.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_text_delete.TestDeleteText]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+
+<testcase internalid="5396" name="Text-Str:Check multiple(25) text files viewing functionality">
+	<node_order><![CDATA[1002]]></node_order>
+	<externalid><![CDATA[271]]></externalid>
+	<fullexternalid><![CDATA[test-271]]></fullexternalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>
+	Check DUT is supporting the multiple text files pushed and viewed at once or not.</p>
+]]></summary>
+	<preconditions><![CDATA[<p>
+	1. DUT should boot up to Android Main menu.<br />
+	2. Build should support text file(.txt) format.</p>
+]]></preconditions>
+	<execution_type><![CDATA[2]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>1</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>
+	1. Copy 100 or more .txt files into DUT.<br />
+	2. Open text file from any application like chrome or HTML viewer or any other third party document reader applications by going to Settings -&gt; Storage -&gt; Explore and click on that. 3. Continuously open 100 text files.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>
+	1. All the text files should be opened without any clashes.<br />
+	2. It should be visible clearly for us.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[2]]></execution_type>
+</step>
+</steps>
+<custom_fields>
+			<custom_field>
+			<name><![CDATA[Test case type]]></name>
+			<value><![CDATA[]]></value>
+			</custom_field>
+			<custom_field>
+			<name><![CDATA[test_xml_class]]></name>
+			<value><![CDATA[tests.test_text_open_multiple_times.TestOpenTextMultipleTimes]]></value>
+			</custom_field>
+		</custom_fields>
+</testcase>
+</testsuite>
+</testsuite>
