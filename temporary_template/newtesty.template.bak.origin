@@ -1,0 +1,419 @@
+<STYLE>
+  BODY, TABLE, TD, TH, P {
+    font-family: Calibri, Verdana, Helvetica, sans serif;
+    font-size: 12px;
+    color: black;
+  }
+  .console {
+    font-family: Courier New;
+  }
+  .filesChanged {
+    width: 10%;
+    padding-left: 10px;
+  }
+  .section {
+    width: 100%;
+    border: thin black dotted;
+  }
+  .td-title-main {
+    color: white;
+    font-size: 200%;
+    padding-left: 5px;
+    font-weight: bold;
+  }
+  .td-title {
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    padding-left: 5px;
+    text-transform: uppercase;
+  }
+  .td-title-tests {
+    font-weight: bold;
+    font-size: 120%;
+  }
+  .td-header-maven-module {
+    font-weight: bold;
+    font-size: 120%;    
+  }
+  .td-maven-artifact {
+    padding-left: 5px;
+  }
+  .tr-title {
+    background-color: <%= (build.result == null || build.result.toString() == 'SUCCESS') ? '#27AE60' : build.result.toString() == 'FAILURE' ? '#E74C3C' : '#f4e242' %>;
+  }
+  .test {
+    padding-left: 20px;
+  }
+  .test-fixed {
+    color: #27AE60;
+  }
+  .test-failed {
+    color: #E74C3C;
+  }
+</STYLE>
+<BODY>
+  <!-- BUILD RESULT -->
+  <table class="section" border="1">
+    <tr class="tr-title">
+      <td class="td-title-main" colspan=2>
+        BUILD ${build.result ?: 'COMPLETED'}
+      </td>
+    </tr>
+    <tr>
+      <td>URL:</td>
+      <td><A href="${rooturl}${build.url}">${rooturl}${build.url}</A></td>
+    </tr>
+    <tr>
+      <td>Project:</td>
+      <td>${project.name}</td>
+    </tr>
+    <tr>
+      <td>Date:</td>
+      <td>${it.timestampString}</td>
+    </tr>
+    <tr>
+      <td>Duration:</td>
+      <td>${build.durationString}</td>
+    </tr>
+    <tr>
+      <td>Cause:</td>
+      <td><% build.causes.each() { cause -> %> ${cause.shortDescription} <%  } %></td>
+    </tr>
+    <tr>
+      <td>AOSP URL:</td>
+      <td><A href="aosp_url">aosp_url</A></td>
+    </tr>
+    <tr>
+      <td>BIOS:</td>
+      <td>BIOSVERSION</td>
+    </tr>
+  </table>
+  <br/>
+
+  <!-- TEST RESULT SUMMARY -->
+<!--
+  <table class="section" border="1">
+    <tr class="tr-title">
+      <td class="td-title-main" colspan=3>
+        Test Result Summary
+      </td>
+    </tr>
+    <tr>
+      <td>Component</td>
+      <td>Items</td>
+      <td>Result(Pass/Fail)</td>
+    </tr>
+    <tr>
+      <td rowspan=3>Video</td>
+      <td>H264 + MP4(.mp4) + 1080P</td>
+      <td bgcolor="red">Pass</td>
+    </tr>
+    <tr>
+      <td>H265 HEVC + (.mp4)+1080P</td>
+      <td bgcolor="red">Pass</td>
+    </tr>
+    <tr>
+      <td>VP9 + (.mp4) + 1080P</td>
+      <td bgcolor="green">Pass</td>
+    </tr>
+    <tr>
+      <td>Audio</td>
+      <td>MP3(.mp3) Audio format</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>DP Display detection</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td rowspan=2>Ethernet</td>
+      <td>Ethernet detection</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>adb over ethernet</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td rowspan=3>USB</td>
+      <td>USB Keyboard detection</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>USB Mouse detection</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>H264+MP4(.mp4)+1080P</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td rowspan=2>Storage</td>
+      <td>Able to push files into internal memory</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Able to pull the files from internal memory</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td rowspan=2>Miscellaneous</td>
+      <td>Able to install third party APKs into internal memory</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Able to uninstall third party APKs from the device internal memory</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td rowspan=3>IO</td>
+      <td>Back Button functionality</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Home Button functionality</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Recent items functionality</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
+      <td>Video</td>
+      <td>H264+MP4(.mp4)+1080P</td>
+      <td>Pass</td>
+    </tr>
+  </table>
+  <br/>
+-->
+
+<!-- TEST SUMMARY -->
+
+  <%
+  def junitResultList1 = it.JUnitTestResult
+  try {
+    def cucumberTestResultAction1 = it.getAction("org.jenkinsci.plugins.cucumber.jsontestsupport.CucumberTestResultAction")
+    junitResultList1.add( cucumberTestResultAction1.getResult() )
+    def dmcount = cucumberTestResultAction1.getResult().getTotalCount();
+  } catch(e) {
+    //cucumberTestResultAction not exist in this build
+  }
+  if ( junitResultList1.size() > 0 ) { %>
+  <table class="section" border="1">
+    <tr class="tr-title">
+      <td class="td-title" colspan="3">${junitResultList1.first().displayName}</td>
+    </tr>
+    <tr>
+      <td class="td-title-tests"> Pass rate:${Math.round(junitResultList1[0].getPassCount()/junitResultList1[0].getTotalCount()*100)}%</td>
+      <td class="td-title-tests" ${junitResultList1[0].getPassCount() != junitResultList1[0].getTotalCount()?'bgcolor="green"':''}> Pass:${junitResultList1[0].getPassCount()}</td>
+      <td class="td-title-tests" ${junitResultList1[0].getFailCount() > 0 ? 'bgcolor="red"':''}> Fail:${junitResultList1[0].getFailCount()}</td>
+    </tr>
+    <tr>
+        <td class="td-title-tests">Component</td>
+        <td class="td-title-tests">Items</td>
+        <td class="td-title-tests">Result(Pass/Fail)</td>
+      </tr>
+    <% junitResultList1.each {
+      junitResult -> junitResult.getChildren().each {
+        packageResult -> %>
+    <tr>
+      <td ${packageResult.getPassCount() == 1 ? '' : 'bgcolor="red"'}>${packageResult.getName().contains('test_video_')? 'Video': packageResult.getName().contains('test_audio_')?'Audio':packageResult.getName().contains('test_dp_')?'Display': packageResult.getName().contains('test_ethernet_')?'Ethernet':packageResult.getName().contains('test_usb_')?'USB':packageResult.getName().contains('test_storage_')?'storage':packageResult.getName().contains('test_kill_')?'Log':packageResult.getName().contains('test_IO_')?'IO':packageResult.getName().contains('test_airplane_')?'Airplane':packageResult.getName().contains('test_boot_')?'Boot':packageResult.getName().contains('test_browser_')?'Browser':packageResult.getName().contains('test_bt_')?'BT':packageResult.getName().contains('test_display_')?'Display':packageResult.getName().contains('test_image_')?'Image':packageResult.getName().contains('test_jpeg_image')?'Image':packageResult.getName().contains('test_png_image')?'Image':packageResult.getName().contains('test_suspend_resume')?'Suspend & Resume':packageResult.getName().contains('test_text_')?'Text':packageResult.getName().contains('test_wifi_')?'Wi-Fi':'Unknown' }</td>
+      <td ${packageResult.getPassCount() == 1 ? '' : 'bgcolor="red"'}>${packageResult.getName()}</td>
+      <td ${packageResult.getPassCount() == 1 ? '' : 'bgcolor="red"'}>${packageResult.getPassCount() == 1 ? "Pass":"Fail"}</td>
+    </tr>
+    <% packageResult.getPassedTests().findAll({it.getStatus().toString() == "FIXED";}).each{
+        test -> %>
+            <tr>
+              <td class="test test-fixed" colspan="3">
+                ${test.getFullName()} ${test.getStatus()}
+              </td>
+            </tr>
+        <% } %>
+        <% packageResult.getFailedTests().sort({a,b -> a.getAge() <=> b.getAge()}).each{
+          failed_test -> %>
+    <tr>
+      <td class="test test-failed" colspan="3">
+        ${failed_test.getFullName()} (Age: ${failed_test.getAge()})
+      </td>
+    </tr>
+        <% }
+      }
+    } %>
+  </table>
+  <br/>
+  <% } %>
+
+
+<!-- JUnit TEMPLATE -->
+<!--
+  <%
+  def junitResultList = it.JUnitTestResult
+  try {
+    def cucumberTestResultAction = it.getAction("org.jenkinsci.plugins.cucumber.jsontestsupport.CucumberTestResultAction")
+    junitResultList.add( cucumberTestResultAction.getResult() )
+  } catch(e) {
+    //cucumberTestResultAction not exist in this build
+  }
+  if ( junitResultList.size() > 0 ) { %>
+  <table class="section" border="1">
+    <tr class="tr-title">
+      <td class="td-title" colspan="5">${junitResultList.first().displayName}</td>
+    </tr>
+    <tr>
+        <td class="td-title-tests">Name</td>
+        <td class="td-title-tests">Failed</td>
+        <td class="td-title-tests">Passed</td>
+        <td class="td-title-tests">Skipped</td>
+        <td class="td-title-tests">Total</td>
+      </tr>
+    <% junitResultList.each {
+      junitResult -> junitResult.getChildren().each {
+        packageResult -> %>
+    <tr>
+      <td>${packageResult.getName()}</td>
+      <td>${packageResult.getFailCount()}</td>
+      <td>${packageResult.getPassCount()}</td>
+      <td>${packageResult.getSkipCount()}</td>
+      <td>${packageResult.getPassCount() + packageResult.getFailCount() + packageResult.getSkipCount()}</td>
+    </tr>
+    <% packageResult.getPassedTests().findAll({it.getStatus().toString() == "FIXED";}).each{
+        test -> %>
+            <tr>
+              <td class="test test-fixed" colspan="5">
+                ${test.getFullName()} ${test.getStatus()}
+              </td>
+            </tr>
+        <% } %>
+        <% packageResult.getFailedTests().sort({a,b -> a.getAge() <=> b.getAge()}).each{
+          failed_test -> %>
+    <tr>
+      <td class="test test-failed" colspan="5">
+        ${failed_test.getFullName()} (Age: ${failed_test.getAge()})
+      </td>
+    </tr>
+        <% }
+      }
+    } %>
+  </table>
+  <br/>
+  <% } %>
+-->
+
+  <!-- CHANGE SET -->
+  <%
+  def changeSets = build.changeSets
+  if(changeSets != null) {
+    def hadChanges = false %>
+  <table class="section">
+    <tr class="tr-title">
+      <td class="td-title" colspan="2">CHANGES</td>
+    </tr>
+    <% changeSets.each() { 
+      cs_list -> cs_list.each() { 
+        cs -> hadChanges = true %>
+    <tr>
+      <td>
+        Revision
+        <%= cs.metaClass.hasProperty('commitId') ? cs.commitId : cs.metaClass.hasProperty('revision') ? cs.revision : cs.metaClass.hasProperty('changeNumber') ? cs.changeNumber : "" %>
+        by <B><%= cs.author %></B>
+      </td>
+      <td>${cs.msgAnnotated}</td>
+    </tr>
+        <% cs.affectedFiles.each() {
+          p -> %>
+    <tr>
+      <td class="filesChanged">${p.editType.name}</td>
+      <td>${p.path}</td>
+    </tr>
+        <% }
+      }
+    }
+    if ( !hadChanges ) { %>
+    <tr>
+      <td colspan="2">No Changes</td>
+    </tr>
+    <% } %>
+  </table>
+  <br/>
+  <% } %>
+
+<!-- ARTIFACTS -->
+  <% 
+  def artifacts = build.artifacts
+  if ( artifacts != null && artifacts.size() > 0 ) { %>
+  <table class="section">
+    <tr class="tr-title">
+      <td class="td-title">BUILD ARTIFACTS</td>
+    </tr>
+    <% artifacts.each() {
+      f -> %>
+      <tr>
+        <td>
+          <a href="${rooturl}${build.url}artifact/${f}">${f}</a>
+      </td>
+    </tr>
+    <% } %>
+  </table>
+  <br/>
+  <% } %>
+
+<!-- MAVEN ARTIFACTS -->
+  <%
+  try {
+    def mbuilds = build.moduleBuilds
+    if ( mbuilds != null ) { %>
+  <table class="section">
+    <tr class="tr-title">
+      <td class="td-title">BUILD ARTIFACTS</td>
+    </tr>
+      <%
+      try {
+        mbuilds.each() {
+          m -> %>
+    <tr>
+      <td class="td-header-maven-module">${m.key.displayName}</td>
+    </tr>
+          <%
+          m.value.each() { 
+            mvnbld -> def artifactz = mvnbld.artifacts
+            if ( artifactz != null && artifactz.size() > 0) { %>
+    <tr>
+      <td class="td-maven-artifact">
+              <% artifactz.each() {
+                f -> %>
+        <a href="${rooturl}${mvnbld.url}artifact/${f}">${f}</a><br/>
+              <% } %>
+      </td>
+    </tr>
+            <% }
+          }
+        }
+      } catch(e) {
+        // we don't do anything
+      } %>
+  </table>
+  <br/>
+    <% }
+  } catch(e) {
+    // we don't do anything
+  } %>
+
+<!-- CONSOLE OUTPUT -->
+  <%
+  if ( build.result == hudson.model.Result.FAILURE ) { %>
+  <table class="section" cellpadding="0" cellspacing="0">
+    <tr class="tr-title">
+      <td class="td-title">CONSOLE OUTPUT</td>
+    </tr>
+    <% 	build.getLog(100).each() {
+      line -> %>
+	  <tr>
+      <td class="console">${org.apache.commons.lang.StringEscapeUtils.escapeHtml(line)}</td>
+    </tr>
+    <% } %>
+  </table>
+  <br/>
+  <% } %>
+</BODY>
